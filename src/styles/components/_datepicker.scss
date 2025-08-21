@@ -72,13 +72,3 @@
     }
     .calendar-footer {@include flex($direction: row, $justifyContents: flex-end);padding: 16px;border-top:1px solid #E4E4E4}    
 }
-
-@media (max-width: 480px) {      
-    .search-box .calendar{flex-wrap: wrap;margin-right: 0 !important;gap:8px;
-        .calendar-form{max-width: calc(100% - 19px) !important;}        
-    }    
-    .wrap-form-area{
-        .calendar-form{max-width: 100% !important;}      
-        .calendar{margin-right: 0;}  
-    }
-}

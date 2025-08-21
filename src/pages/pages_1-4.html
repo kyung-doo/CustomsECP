@@ -4,171 +4,236 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap" class="login">
+   <div id="wrap" class="logout">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->
-            <h3 class="head-tit">개인통관고유부호 정보변경</h3>
-            <div class="step-area">
-               <div class="tit-box">
-                  <strong class="tit-step"><span>Step 3</span><i>/</i>Step 4</strong>
-                  <h4 class="tit">알림동의</h4>
-               </div>
-               <div class="step-box">
-                  <ol class="step-wrap step-type2">
-                     <li class="done">
-                        <span>                              
-                              <i class="step">Step 1</i>
-                              <span class="step-tit">기본정보 입력</span>
-                        </span>
-                     </li>
-                     <li class="done">
-                        <span>
-                              <i class="step">Step 2</i>
-                              <span class="step-tit">배송지 주소 등록</span>
-                        </span>
-                     </li>
-                     <li class="active">
-                        <span>
-                              <em class="sr-only">현재단계</em>
-                              <i class="step">Step 3</i>
-                              <span class="step-tit">알림 동의</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>                     
-                              <i class="step">Step 4</i>
-                              <span class="step-tit">확인 및 등록</span>
-                        </span>
-                     </li>               
-                  </ol>
-               </div>
-            </div>
+            <h3 class="head-tit">자주찾는서비스 관리</h3>            
          </div>
-         <div class="cont-body">
-            <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
-               <div class="accordion-header">
-                  <a href="javascript: void(0);" class="accordion-btn" title="열기"><strong>개인통관고유부호란?</strong> <i class="icon btn-arrow-down medium"></i></a>
-               </div>
-               <div class="accordion-body d-none">
-                  <p class="txt">개인통관고유부호란?</p>                  
-               </div>
-            </div>                                                      
+         <div class="cont-body">            
             <!-- 내용 -->
             <div class="cont-area">
-               <div class="txt-box-type end">
-                   <div class="form-check">
-                     <input type="checkbox" name="all_chk" id="all_chk">
-                     <label for="all_chk">전체동의</label>
+               <div class="search-box"> 
+                  <ul>                     
+                     <li class="col2">
+                        <label class="tit" for="ex1">제목</label>
+                        <div class="search-area">
+                            <div class="form-group medium mw-360">                     
+                              <div class="form-conts">
+                                 <input type="text" class="input" id="ex1">
+                              </div>                              
+                           </div> 
+                        </div>                        
+                     </li>
+                     <li class="col2">
+                        <label class="tit" for="ex2">사용여부</label>
+                        <div class="search-area">
+                           <div class="form-group medium mw-360">                  
+                              <div class="form-conts">
+                                 <select class="form-select" id="ex2" required="">
+                                 <option value="" selected="" disabled="" hidden="">전체</option>
+                                 <option value="항목1">항목1</option>
+                                 <option value="항목2">항목2</option>
+                                 <option value="항목3">항목3</option>
+                                 </select>
+                              </div>                              
+                           </div>
+                        </div>                        
+                     </li>
+                  </ul>
+                  <div class="btn-area btn-end">
+                     <div class="align">
+                        <button type="button" class="btn tertiary medium">초기화</button>
+                        <button type="button" class="btn secondary medium">조회</button>                        
+                     </div>
                   </div>
                </div>
-               <div class="agree-title">
-                  <strong class="title-type font-2"><strong class="info-txt cl-3">[필수]</strong>일회용 인증번호발급 알림</strong>
-                  <div class="contextual-help top right" data-ui="tooltip">                              
-                     <div class="tooltip-btn-area">                                 
-                        <button class="tooltip-ico">일회용 인증번호발급 알림</button>
-                        <div class="tooltip-action">                  
-                           <div class="tooltip-popover">
-                           <strong class="tooltip-title">일회용 인증번호발급 알림</strong>
-                           <div class="tooltip-contents">
-                              <p>일회용 인증번호발급 알림</p>
-                              <div class="btn-wrap">
-                                 <a href="#;" class="btn link">바로가기</a>
+               <div class="board-top tbl-top">
+                  <div class="left-box">
+                     <strong class="tit top-txt">전체<strong>240</strong>개</strong>
+                     <div class="top-txt">
+                        <select class="form-select-sort large" title="정보 구분 선택">                           
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                        </select>
+                     </div>                     
+                  </div>                  
+               </div>
+               <div class="wrap-check-tbl">
+                  <div class="table-wrap">
+                     <table class="tbl col check">
+                        <caption>자주찾는서비스 관리</caption>
+                        <colgroup>
+                           <col style="width:80px;">                                                                                                            
+                           <col style="width:200px;">                                                                                                            
+                           <col style="width:540px;">                                                                                                            
+                           <col style="width:100px;">                                                                                                            
+                           <col style="width:100px;">                                                                                                            
+                           <col style="width:130px;">                                                                                                            
+                           <col style="width:130px;">                                                                                                            
+                        </colgroup>
+                        <thead>
+                           <tr>                                                
+                              <th scope="col">NO</th>
+                              <th scope="col">자주찾는서비스ID</th>
+                              <th scope="col">제목</th>
+                              <th scope="col">정렬순서</th>
+                              <th scope="col">사용여부</th>
+                              <th scope="col">등록일자</th>
+                              <th scope="col">등록자</th>                                                                                          
+                           </tr>
+                        </thead>
+                        <tbody>                           
+                           <tr>
+                              <td>1</td>
+                              <td><a href="#none" class="cl-7">MYC_FRV_000001</a></td>
+                              <td class="tb-title">개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다</td>
+                              <td>1</td>
+                              <td>사용</td>
+                              <td>2025-05-06</td>
+                              <td>opm291</td>                                                            
+                           </tr> 
+                           <!-- 데이터없음 -->  
+                           <tr>
+                              <td colspan="7">데이터 없음</td>
+                           </tr>                
+                           <!-- 데이터없음 -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+                        </tbody>
+                     </table>
+                  </div>                  
+               </div>
+               <div class="pagination pagination-type1">               
+                  <button class="page-navi prev" disabled="">이전</button>
+                  <div class="page-links">
+                     <a class="page-link mobile-link" href="#">1</a>
+                     <span class="page-link link-dot mobile-dot"></span>
+                     <a class="page-link" href="#">2</a>
+                     <a class="page-link" href="#">3</a>
+                     <a class="page-link" href="#">4</a>
+                     <a class="page-link mobile-link" href="#">5</a>
+                     <a class="page-link active mobile-link" href="#"><span class="sr-only">현재페이지 </span>6</a>                  
+                     <a class="page-link mobile-link" href="#">7</a>
+                     <a class="page-link" href="#">8</a>
+                     <a class="page-link" href="#">9</a>
+                     <span class="page-link link-dot"></span>
+                     <a class="page-link mobile-link" href="#">120</a>
+                  </div>
+                  <button class="page-navi next">다음</button>
+               </div>
+               <h5 class="title-type3">상세정보</h5>
+               <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>                                                         
+                        <li class="col1 txt-list">
+                           <strong class="tit">
+                              <strong>자주찾는서비스ID</strong>
+                           </strong>   
+                           <div class="inp-box">
+                              <p class="txt">MYC_FRV_000001</p>
+                           </div>                                                                     
+                        </li>
+                        <li class="col1 txt-list">
+                           <label class="tit" for="ex11">
+                              <strong>제목 <i class="compulsory">필수</i></strong>
+                           </label>   
+                           <div class="inp-box">
+                              <div class="form-group medium">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" id="ex11" value="개인통관부호 갱신이 필요합니다">
+                                 </div>                                 
                               </div>
-                           </div>
-                           <button type="button" class="btn tooltip-close">
-                              <span class="sr-only">닫기</span>                        
-                           </button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="acc-area">
-                  <div class="tit">
-                     <p>해외직구 주문 시 발급된 일회용 인증번호 발급 내역을 사용자의 이메일을 통해 알림 전송하는 것을 동의합니다.</p>
-                     <div class="box">
-                        <div class="form-check medium">
-                           <input type="radio" name="chk-agree" id="agree1">
-                           <label for="agree1">동의하지 않음</label>
-                        </div>
-                        <div class="form-check medium">
-                           <input type="radio" name="chk-agree" id="agree2">
-                           <label for="agree2">동의함</label>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="txt">
-                     <p><i class="icon danger medium"></i>일회용 인증부호 발급 내역을 알림 받지 않을 경우 해외직구통관이 정상적으로 진행되지 않을 수 있습니다.</p>
-                  </div>
-               </div>
-               <div class="agree-title">
-                  <strong class="title-type font-2"><strong class="info-txt cl-1">[선택]</strong>해외직구통관 알림</strong>                  
-                  <div class="contextual-help top right" data-ui="tooltip">                              
-                     <div class="tooltip-btn-area">                                 
-                        <button class="tooltip-ico">해외직구통관 알림</button>
-                        <div class="tooltip-action">                  
-                           <div class="tooltip-popover">
-                           <strong class="tooltip-title">해외직구통관 알림</strong>
-                           <div class="tooltip-contents">
-                              <p>해외직구통관 알림</p>
-                              <div class="btn-wrap">
-                                 <a href="#;" class="btn link">바로가기</a>
+                           </div>                                                                     
+                        </li>
+                        <li class="col1 txt-list">
+                           <label class="tit" for="ex21">
+                              <strong>부제목 <i class="compulsory">필수</i></strong>
+                           </label>   
+                           <div class="inp-box">
+                              <div class="form-group medium">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" id="ex21" value="Personal Customs Code Renew is needed?">
+                                 </div>                                 
                               </div>
-                           </div>
-                           <button type="button" class="btn tooltip-close">
-                              <span class="sr-only">닫기</span>                        
-                           </button>
-                           </div>
-                        </div>
-                     </div>
+                           </div>                                                                     
+                        </li>
+                        <li class="col1 txt-list">
+                           <label class="tit" for="ex3">
+                              <strong>링크URL <i class="compulsory">필수</i></strong>
+                           </label>   
+                           <div class="inp-box">
+                              <div class="form-group medium">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" id="ex3" value="https://unipass.customs.go.kr/ecp/pcd/update.do">
+                                 </div>                                 
+                              </div>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <label class="tit" for="ex31">
+                              <strong>정렬순서 <i class="compulsory">필수</i></strong>
+                           </label>   
+                           <div class="inp-box">
+                              <div class="form-group medium mw-120">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" id="ex31" value="1">
+                                 </div>                                 
+                              </div>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">
+                              <strong>사용여부 <i class="compulsory">필수</i></strong>
+                           </strong>   
+                           <div class="inp-box">
+                              <div class="check-list-box">
+                                 <div class="form-check medium">
+                                    <input type="radio" name="radio1" id="chk1" checked="">
+                                    <label for="chk1">사용</label>
+                                 </div>
+                                 <div class="form-check medium">
+                                    <input type="radio" name="radio1" id="chk2">
+                                    <label for="chk2">미사용</label>
+                                 </div>
+                              </div>                              
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">
+                              <strong>등록일자</strong>
+                           </strong>   
+                           <div class="inp-box">
+                              <p class="txt">2025-04-29</p>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">
+                              <strong>등록자</strong>
+                           </strong>   
+                           <div class="inp-box">
+                              <p class="txt">opm291</p>
+                           </div>                                                                     
+                        </li>                      
+                     </ul>                  
                   </div>
                </div>
-               <div class="acc-area">
-                  <div class="tit">
-                     <p>해외직구 통관 결과 정보를 사용자의 이메일을 통해 알림을 전송하는 것을 동의 합니다.</p>
-                     <div class="box">
-                         <div class="form-check">
-                           <input type="checkbox" id="chk_1">
-                           <label for="chk_1">동의함</label>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="txt">
-                     <p><i class="icon danger medium"></i>동의하지 않는 경우 해외직구 통관 결과 알림을 받을 수 없습니다.</p>
+               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+               <div class="btn-area btn-end">
+                  <div class="align">
+                     <button type="button" class="btn tertiary medium">삭제</button>
+                     <button type="button" class="btn secondary medium">저장</button>
                   </div>
                </div>
-               <div class="btn-area btn-between">
-                  <div class="align">                            
-                     <button type="button" class="btn tertiary large">이전</button>                 
-                  </div>
-                  <div class="align">                            
-                     <button type="button" class="btn primary large" disabled>다음</button>                 
+               <div class="btn-area btn-end">
+                  <div class="align">
+                     <button type="button" class="btn primary large">신규</button>
                   </div>
                </div>
-               <!-- 팝업 사용후 삭제해주세요 -->
-               <div class="testtest">
-                  <!-- 일회용 인증번호 발급 알림 -->
-                  <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">일회용 인증번호 발급 알림 미동의 안내</button>
-                  <div id="modal1" class="modal d-none type1" data-ui="modal">
-                     <div class="modal-wrap mw-400">
-                        <div class="modal-header">
-                           <h5>일회용 인증번호 발급 알림 미동의 안내</h5>                     
-                        </div>
-                        <div class="modal-body" tabindex="0">
-                           <div class="modal-cont">                                    
-                              <p class="txt-type">일회용 인증번호 발급 알림에 미동의 하셨습니다.<br> 개인통관고유부호 갱신을 위해서는 일회용 인증번<br>호발급 알림 동의에 동의를 해주셔야 신규 발급이<br> 가능합니다.</p>
-                           </div>                                  
-                        </div>
-                        <div class="modal-footer">                        
-                           <button type="button" class="btn primary medium">확인</button>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- // 일회용 인증번호 발급 알림 -->
-               </div>
-               <!-- 팝업 사용후 삭제해주세요 -->
+
+
+                 
             </div>
             <!--// 내용 -->
          </div>

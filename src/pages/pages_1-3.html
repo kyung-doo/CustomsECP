@@ -4,279 +4,257 @@
    <%= _.template(require('fs').readFileSync('./src/layouts/head.html', 'utf8'))({}) %>
 </head>
 <body>
-   <div id="wrap" class="login">
+   <div id="wrap" class="logout">
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->
-            <h3 class="head-tit">개인통관고유부호 정보변경</h3>
-            <div class="step-area">
-               <div class="tit-box">
-                  <strong class="tit-step"><span>Step 2</span><i>/</i>Step 4</strong>
-                  <h4 class="tit">배송지 주소 등록</h4>
-               </div>
-               <div class="step-box">
-                  <ol class="step-wrap step-type2">
-                     <li class="done">
-                        <span>                              
-                              <i class="step">Step 1</i>
-                              <span class="step-tit">기본정보 입력</span>
-                        </span>
-                     </li>
-                     <li class="active">
-                        <span>
-                              <em class="sr-only">현재단계</em>
-                              <i class="step">Step 2</i>
-                              <span class="step-tit">배송지 주소 등록</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>
-                              <i class="step">Step 3</i>
-                              <span class="step-tit">알림 동의</span>
-                        </span>
-                     </li>
-                     <li>
-                        <span>                     
-                              <i class="step">Step 4</i>
-                              <span class="step-tit">확인 및 등록</span>
-                        </span>
-                     </li>               
-                  </ol>
-               </div>
-            </div>
+            <h3 class="head-tit">공지사항 등록</h3>            
          </div>
-         <div class="cont-body">
-            <div class="accordion-wrap accordion cont-advice" data-ui="accordion">
-               <div class="accordion-header">
-                  <a href="javascript: void(0);" class="accordion-btn" title="열기"><strong>개인통관고유부호란?</strong> <i class="icon btn-arrow-down medium"></i></a>
-               </div>
-               <div class="accordion-body d-none">
-                  <p class="txt">개인통관고유부호란?</p>                  
-               </div>
-            </div>                                                      
+         <div class="cont-body">            
             <!-- 내용 -->
             <div class="cont-area">
-               <div class="txt-box-type type1">
-                  <p>주소는 최대 20개 까지 등록 가능합니다. <strong><strong class="cl-4">3개</strong><i>/</i>20개</strong></p>
-                  <button type="button" class="btn secondary medium">주소 추가</button>
-               </div>
-               <p class="compulsory-txt pc"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
-               <div class="wrap-form-area pc">
-                  <div class="inp-form">
-                     <ul>                                                         
-                        <li class="col1">
-                           <label for="ex1" class="tit">배송지명 <i class="compulsory">필수</i></label>
-                           <div class="inp-box">
-                              <div class="form-group medium mw-298">                     
-                                 <div class="form-conts">
-                                    <input type="text" class="input mw-298" id="ex1" title="배송지명을 입력해주세요" value="우리집">
-                                 </div>                              
-                              </div>
-                           </div>   
-                        </li>
-                        <li class="col1 address-list">
-                           <label for="ex2" class="tit">기본 주소 <i class="compulsory">필수</i></label>
-                           <div class="inp-box">
-                              <div class="form-group medium first-add mw-140">                     
-                                 <div class="form-conts">
-                                    <input type="text" class="input" id="ex2" disabled title="우편번호를 확인해주세요" value="123456">
-                                 </div>                              
-                              </div>
-                              <button type="button" class="btn secondary medium ico">우편번호 검색 <i class="icon search-type1 medium"></i></button>
-                              <div class="form-group medium last-add mw-695">                     
-                                 <div class="form-conts">
-                                    <input type="text" class="input" disabled title="주소를 확인해주세요" value="대전시 서구 도안동123">
-                                 </div>                              
-                              </div>
-                           </div>  
-                        </li>
-                        <li class="col1">
-                           <label for="ex3" class="tit">상세 주소 <i class="compulsory">필수</i></label>
-                           <div class="inp-box">
-                              <div class="form-group medium mw-1009">                     
-                                 <div class="form-conts">
-                                    <input type="text" class="input" id="ex3" title="상세주소를 입력해주세요" value="123동 456호">
-                                 </div>                             
-                              </div>
-                           </div>  
-                        </li>
-
-                     </ul>
-                     <div class="form-btn-area">
-                        <button class="btn text medium"><i class="icon refresh medium"></i>초기화</button>
-                        <button class="btn text medium"><i class="icon close medium"></i>삭제</button>
-                     </div>
-                  </div>
-                  <div class="inp-form">
-                     <ul>                                                         
-                        <li class="col1">
-                           <label for="ex1_1" class="tit">배송지명 <i class="compulsory">필수</i></label>
-                           <div class="inp-box">
-                              <div class="form-group medium mw-298">                     
-                                 <div class="form-conts">
-                                    <input type="text" class="input mw-298" id="ex1_1" title="배송지명을 입력해주세요" value="우리집">
-                                 </div>                              
-                              </div>
-                           </div>  
-                        </li>
-                        <li class="col1 address-list">
-                           <label for="ex2_1" class="tit">기본 주소 <i class="compulsory">필수</i></label>
-                           <div class="inp-box">
-                              <div class="form-group medium first-add mw-140">                     
-                                 <div class="form-conts">
-                                    <input type="text" class="input" id="ex2_1" disabled title="우편번호를 확인해주세요" value="123456">
-                                 </div>                              
-                              </div>
-                              <button type="button" class="btn secondary medium ico">우편번호 검색 <i class="icon search-type1 medium"></i></button>
-                              <div class="form-group medium last-add mw-698">                     
-                                 <div class="form-conts">
-                                    <input type="text" class="input" disabled title="주소를 확인해주세요" value="대전시 서구 도안동123">
-                                 </div>                              
-                              </div>
-                           </div>  
-                        </li>
-                        <li class="col1">
-                           <label for="ex3_1" class="tit">상세 주소 <i class="compulsory">필수</i></label>
-                           <div class="inp-box">
-                              <div class="form-group medium mw-1012">                     
-                                 <div class="form-conts">
-                                    <input type="text" class="input" id="ex3_1" title="상세주소를 입력해주세요" value="123동 456호">
-                                 </div>                             
-                              </div>
-                           </div>  
-                        </li>
-                     </ul>
-                     <div class="form-btn-area">
-                        <button class="btn text medium"><i class="icon refresh medium"></i>초기화</button>
-                        <button class="btn text medium"><i class="icon close medium"></i>삭제</button>
-                     </div>
-                  </div>
-               </div>
-               <div class="wrap-form-area mo type1">
+               <div class="wrap-form-area">
                   <div class="inp-form">
                      <ul>                                                         
                         <li class="col2 txt-list">
-                           <strong class="add-tit">우리집(세종)  <button class="add-modify-btn"><i class="icon btn-arrow-right medium"></i>주소수정</button></strong>
+                           <strong class="tit">
+                              <strong>게시번호</strong>
+                           </strong>   
                            <div class="inp-box">
-                              <p class="add-txt">(30068) 세종특별자치시 마음로 999</p>
-                              <p class="add-txt">가락마을 10단지, 1234-5678</p>
-                           </div>                        
+                              <p class="txt">202506131988</p>
+                           </div>                                                                     
                         </li>
-                     </ul>
-                     <div class="form-btn-area">                        
-                        <button class="btn text medium"><i class="icon close medium"></i>삭제</button>
-                     </div>
-                  </div>                  
-                  <div class="inp-form">
-                     <ul>                                                         
                         <li class="col2 txt-list">
-                           <strong class="add-tit">우리집(세종)  <button class="add-modify-btn"><i class="icon btn-arrow-right medium"></i>주소수정</button></strong>
+                           <strong class="tit">
+                              <strong>조회수</strong>
+                           </strong>   
                            <div class="inp-box">
-                              <p class="add-txt">(30068) 세종특별자치시 마음로 999</p>
-                              <p class="add-txt">가락마을 10단지, 1234-5678</p>
-                           </div>                        
+                              <p class="txt">245</p>
+                           </div>                                                                     
+                        </li>   
+                        <li class="col1 txt-list">
+                           <label class="tit" for="ex1">
+                              <strong>제목 <i class="compulsory">필수</i></strong>
+                           </label>   
+                           <div class="inp-box">
+                              <div class="form-group medium">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" id="ex1" value="수입통관 주요.반복 오류사례 안내집">
+                                 </div>                                 
+                              </div>
+                           </div>                                                                     
+                        </li>   
+                        <li class="col1 txt-list">
+                           <strong class="tit">
+                              <strong>공지기간</strong>
+                           </strong>   
+                           <div class="inp-box">
+                              <div class="calendar">
+                                 <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'">
+                                    <input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10" value="2025-03-01">
+                                    <button class="calendar-btn">시작 달력보기</button>
+                                 </div>
+                                 <div class="form-group medium mw-100">                  
+                                    <div class="form-conts">
+                                       <select class="form-select" required="">
+                                          <option value="" disabled="" hidden="">조건을 선택해주세요</option>
+                                          <option value="18" selected="">18</option>                                          
+                                       </select>
+                                    </div>                                    
+                                 </div>
+                                 <p>시</p>
+                                 <div class="form-group medium mw-100">                  
+                                    <div class="form-conts">
+                                       <select class="form-select" required="">
+                                          <option value="" disabled="" hidden="">조건을 선택해주세요</option>
+                                          <option value="00" selected="">00</option>                                          
+                                       </select>
+                                    </div>                                    
+                                 </div>
+                                 <p>분</p>
+                                 <i class="hy">~</i>
+                                 <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
+                                    <input id="endDate" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10" value="2025-03-01">
+                                    <button class="calendar-btn">종료 달력보기</button>
+                                 </div>
+                                 <div class="form-group medium mw-100">                  
+                                    <div class="form-conts">
+                                       <select class="form-select" required="">
+                                          <option value="" disabled="" hidden="">조건을 선택해주세요</option>
+                                          <option value="18" selected="">18</option>                                          
+                                       </select>
+                                    </div>                                    
+                                 </div>
+                                 <p>시</p>
+                                 <div class="form-group medium mw-100">                  
+                                    <div class="form-conts">
+                                       <select class="form-select" required="">
+                                          <option value="" disabled="" hidden="">조건을 선택해주세요</option>
+                                          <option value="00" selected="">00</option>                                          
+                                       </select>
+                                    </div>                                    
+                                 </div>
+                                 <p>분</p>
+                              </div>
+                           </div>                                                                     
                         </li>
-                     </ul>
-                     <div class="form-btn-area">                        
-                        <button class="btn text medium"><i class="icon close medium"></i>삭제</button>
-                     </div>
-                  </div>                  
-                  <div class="inp-form">
-                     <ul>                                                         
                         <li class="col2 txt-list">
-                           <strong class="add-tit">우리집(세종)  <button class="add-modify-btn"><i class="icon btn-arrow-right medium"></i>주소수정</button></strong>
+                           <label class="tit" for="ex2">
+                              <strong>업무구분 <i class="compulsory">필수</i></strong>
+                           </label>   
                            <div class="inp-box">
-                              <p class="add-txt">(30068) 세종특별자치시 마음로 999</p>
-                              <p class="add-txt">가락마을 10단지, 1234-5678</p>
-                           </div>                        
+                              <div class="form-group medium mw-240">                  
+                                 <div class="form-conts">
+                                    <select class="form-select" required="" id="ex2">
+                                       <option value="" disabled="" hidden="">조건을 선택해주세요</option>
+                                       <option value="수입통관" selected="">수입통관</option>                                          
+                                    </select>
+                                 </div>                                    
+                              </div>
+                           </div>                                                                     
                         </li>
-                     </ul>
-                     <div class="form-btn-area">                        
-                        <button class="btn text medium"><i class="icon close medium"></i>삭제</button>
-                     </div>
-                  </div>                  
-               </div>
-               <div class="btn-area btn-between">
-                  <div class="align">                            
-                     <button type="button" class="btn tertiary large">이전</button>                 
-                  </div>
-                  <div class="align">                            
-                     <button type="button" class="btn primary large" disabled>다음</button>                 
-                  </div>
-               </div>
-               <!-- 팝업 사용후 삭제해주세요 -->
-               <div class="testtest">
-                  <!-- 주소 입력 -->
-                  <button type="button" data-modal-target="#modal1" style="width:100%;height:50px;margin-bottom:20px">주소 입력</button>
-                  <div id="modal1" class="modal d-none" data-ui="modal">
-                     <div class="modal-wrap mw-358">
-                        <div class="modal-header">
-                              <h5>주소 입력</h5>                     
-                        </div>
-                        <div class="modal-body" tabindex="0">
-                           <div class="modal-cont">
-                              <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
-                              <div class="wrap-form-area">
-                                 <div class="inp-form">
-                                    <ul>                                                         
-                                       <li class="col1">
-                                          <label for="p-ex1" class="tit">배송지명 <i class="compulsory">필수</i></label>
-                                          <div class="inp-box">
-                                             <div class="form-group medium">                     
-                                                <div class="form-conts">
-                                                   <input type="text" class="input mw-298" id="p-ex1" title="배송지명을 입력해주세요" value="우리집">
-                                                </div>                              
-                                             </div>
-                                          </div>  
-                                       </li>
-                                       <li class="col1 address-list">
-                                          <label for="p-ex2" class="tit">기본 주소 <i class="compulsory">필수</i></label>
-                                          <div class="inp-box">
-                                             <div class="nowrap-box">
-                                                <div class="form-group medium">                     
-                                                   <div class="form-conts">
-                                                      <input type="text" class="input" id="p-ex2" disabled title="우편번호를 확인해주세요" value="123456">
-                                                   </div>                              
-                                                </div>
-                                                <button type="button" class="btn secondary medium ico add-btn">우편번호 검색 <i class="icon search-type1 medium"></i></button>
-                                             </div>
-                                             <div class="form-group medium">                     
-                                                <div class="form-conts">
-                                                   <input type="text" class="input" disabled title="주소를 확인해주세요" value="대전시 서구 도안동123">
-                                                </div>                              
-                                             </div>
-                                          </div>  
-                                       </li>
-                                       <li class="col1">
-                                          <label for="p-ex3" class="tit">상세 주소 <i class="compulsory">필수</i></label>
-                                          <div class="inp-box">
-                                             <div class="form-group medium">                     
-                                                <div class="form-conts">
-                                                   <input type="text" class="input" id="p-ex3" title="상세주소를 입력해주세요" value="123동 456호">
-                                                </div>                             
-                                             </div>
-                                          </div>  
-                                       </li>
-
-                                    </ul>
-                                    <div class="form-btn-area">
-                                       <button class="btn text medium"><i class="icon refresh medium"></i>초기화</button>
-                                       <button class="btn text medium"><i class="icon close medium"></i>삭제</button>
+                        <li class="col2 txt-list">
+                           <strong class="tit">
+                              <strong>게시활성화여부</strong>
+                           </strong>   
+                           <div class="inp-box">
+                              <div class="check-list-box">
+                                 <div class="form-check medium">
+                                    <input type="radio" name="radio1" id="chk1" checked="">
+                                    <label for="chk1">활성화</label>
+                                 </div>
+                                 <div class="form-check medium">
+                                    <input type="radio" name="radio1" id="chk2">
+                                    <label for="chk2">비활성화</label>
+                                 </div>
+                              </div>                              
+                           </div>                                                                     
+                        </li>   
+                        <li class="col2 txt-list">
+                           <label class="tit" for="ex3">
+                              <strong>자료실구분 <i class="compulsory">필수</i></strong>
+                           </label>   
+                           <div class="inp-box">
+                              <div class="form-group medium mw-240">                  
+                                 <div class="form-conts">
+                                    <select class="form-select" required="" id="ex3">
+                                       <option value="" disabled="" hidden="">조건을 선택해주세요</option>
+                                       <option value="일반자료실" selected="">일반자료실</option>                                          
+                                    </select>
+                                 </div>                                    
+                              </div>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">
+                              <strong>필수여부</strong>
+                           </strong>   
+                           <div class="inp-box">
+                              <div class="check-list-box">
+                                 <div class="form-check medium">
+                                    <input type="radio" name="radio2" id="chk3" checked="">
+                                    <label for="chk3">필수</label>
+                                 </div>
+                                 <div class="form-check medium">
+                                    <input type="radio" name="radio2" id="chk4">
+                                    <label for="chk4">비활성화</label>
+                                 </div>
+                              </div>                              
+                           </div>                                                                     
+                        </li>
+                        <li class="col1 txt-list">
+                           <label class="tit" for="ex4">
+                              <strong>내용 <i class="compulsory">필수</i></strong>
+                           </label>   
+                           <div class="inp-box">
+                              <div class="form-group">                                 
+                                 <div class="form-conts">
+                                    <div class="textarea-wrap">
+                                       <textarea class="input" id="ex4"></textarea>                                       
                                     </div>
                                  </div>
                               </div>
-                           </div>                           
-                        </div>
-                        <div class="modal-footer">
-                           <button type="button" class="btn tertiary medium">취소</button>
-                           <button type="button" class="btn primary medium">저장</button>
-                        </div>
-                     </div>
+                           </div>                                                                     
+                        </li>
+                        <li class="col1 txt-list">
+                           <strong class="tit">
+                              <strong>첨부파일</strong>
+                           </strong>   
+                           <div class="inp-box">                              
+                              <div class="file-upload">
+                                 <div class="txt-box"><p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p></div>
+                                 <div class="file-upload-btn-wrap">
+                                    <input type="file" id="fileu-upload1" hidden="">
+                                    <label for="fileu-upload1" class="btn tertiary medium">
+                                       파일선택
+                                    </label>
+                                    <button class="btn text medium"><i class="icon close medium"></i>삭제</button>
+                                 </div>
+                              </div>
+                              <div class="file-upload">
+                                 <div class="txt-box"><p class="txt">첨부할 파일을 여기에 끌어다 놓거나, 파일 선택 버튼을 눌러 파일을 직접 선택해주세요.</p></div>
+                                 <div class="file-upload-btn-wrap">
+                                    <input type="file" id="fileu-upload2" hidden="">
+                                    <label for="fileu-upload2" class="btn tertiary medium">
+                                       파일선택
+                                    </label>
+                                    <button class="btn text medium"><i class="icon close medium"></i>삭제</button>
+                                 </div>
+                              </div>
+                              <div class="btn-area mt-24">
+                                 <div class="align">
+                                    <button type="button" class="btn secondary medium">첨부파일 추가</button>
+                                 </div>
+                              </div>
+                           </div>                                                                     
+                        </li>
+                        <li class="col1 txt-list">
+                           <strong class="tit">
+                              <strong>기존파일</strong>
+                           </strong>   
+                           <div class="inp-box">
+                              <ul class="inp-list">
+                                 <li><a href="#none">6차 할당, 조정관세(나프타 제조용 원유 등, 7.6일 시행).xlsx</a><button class="btn text medium"><i class="icon close medium"></i>삭제</button></li>
+                                 <li><a href="#none">6차 할당, 조정관세(나프타 제조용 원유 등, 7.6일 시행).xlsx</a><button class="btn text medium"><i class="icon close medium"></i>삭제</button></li>
+                              </ul>
+                           </div>
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">
+                              <strong>등록자</strong>
+                           </strong>   
+                           <div class="inp-box">
+                              <p class="txt">ECP관리자</p>
+                           </div>                                                                     
+                        </li>
+                        <li class="col2 txt-list">
+                           <strong class="tit">
+                              <strong>등록일시</strong>
+                           </strong>   
+                           <div class="inp-box">
+                              <p class="txt">2025-06-18 12:45</p>
+                           </div>                                                                     
+                        </li>   
+                        
+                     </ul>                  
                   </div>
-                  <!-- // 주소 입력 -->
                </div>
-               <!-- 팝업 사용후 삭제해주세요 -->
+               <p class="compulsory-txt"><i class="compulsory">필수</i> 표시는 필수 입력 사항입니다.</p>
+               <div class="btn-area btn-between">
+                  <div class="align">
+                     <button type="button" class="btn tertiary large">목록</button>
+                  </div>
+                  <div class="align">                     
+                     <button type="button" class="btn primary large">저장</button>
+                  </div>
+               </div>
+
+
+
+
+
+               
             </div>
             <!--// 내용 -->
          </div>
