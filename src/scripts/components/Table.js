@@ -1,4 +1,4 @@
-import $ from 'jquery';
+
 
 class Table {
 
@@ -6,6 +6,7 @@ class Table {
         apiPath: '',
         apiType: 'get',
         tableType: 'default',
+        data: null,
         caption: '',
         noLimit: false,
         useResize: true,
@@ -27,10 +28,10 @@ class Table {
         if(props.useHashParam) {
             this.page = this.getHashParam('page') ? this.getHashParam('page') : 1;
         } else {
-            this.page = 1;
+            this.page = this.props.data ? this.props.data.page ?? 1 : 1;
         }
         this.limit = this.getHashParam('limit') ? this.getHashParam('limit') : 10;
-        this.data;
+        this.data = this.props.data ?? {};
         this.startX = 0;
         this.startWidth = 0;
         this.touchIndex = 0;
@@ -73,26 +74,30 @@ class Table {
 
     loadData () {
         return new Promise((resolve, reject) => {
-            let data = null;
-            if(!this.props.noLimit) {
-                data = { 
-                    page: this.page,
-                    limit: this.limit
+            if(!this.props.data) {
+                let data = null;
+                if(!this.props.noLimit) {
+                    data = { 
+                        page: this.page,
+                        limit: this.limit
+                    }
                 }
+                $.ajax({
+                    type: this.props.apiType,
+                    url: this.props.apiPath,
+                    dataType: 'json',
+                    data: data,
+                    success: ( res ) => {
+                        this.data = res;
+                        resolve();
+                    },
+                    error: (request, status, error) => {
+                        reject();
+                    }
+                });
+            } else {
+                resolve();
             }
-            $.ajax({
-                type: this.props.apiType,
-                url: this.props.apiPath,
-                dataType: 'json',
-                data: data,
-                success: ( res ) => {
-                    this.data = res;
-                    resolve();
-                },
-                error: (request, status, error) => {
-                    reject();
-                }
-            });
         });
     }
 
@@ -190,7 +195,7 @@ class Table {
                     tablePC.find('thead tr').append(`<th>${head.name}</th>`);
                 }
                 if(head.tooltip) {
-                    this.addToolTip(tablePC.find('thead tr th').eq(i+1), head.tooltip);
+                    this.addToolTip(tablePC.find('thead tr th').eq(this.props.tableType === 'crud' ? i+1 : i), head.tooltip);
                 }
             });
 
@@ -206,16 +211,16 @@ class Table {
                             if(!tablePC.find('.th-turn').eq(j).hasClass('active')) {
                                 tablePC.find('.th-turn').eq(j).addClass('active');
                                 if(owner.props.tableType === 'crud') {
-                                    owner.sortData('desc', owner.props.body[idx-1].label);
+                                    owner.sortData('desc', owner.props.body[idx-1].label, owner.props.head[idx-1].sort);
                                 } else {
-                                    owner.sortData('desc', owner.props.body[idx].label);
+                                    owner.sortData('desc', owner.props.body[idx].label, owner.props.head[idx].sort);
                                 }
                             } else {
                                 tablePC.find('.th-turn').eq(j).removeClass('active');
                                 if(owner.props.tableType === 'crud') {
-                                    owner.sortData('asc', owner.props.body[idx-1].label);
+                                    owner.sortData('asc', owner.props.body[idx-1].label, owner.props.head[idx-1].sort);
                                 } else {
-                                    owner.sortData('asc', owner.props.body[idx].label);
+                                    owner.sortData('asc', owner.props.body[idx].label, owner.props.head[idx].sort);
                                 }
                             }
                         }
@@ -233,10 +238,10 @@ class Table {
                                 <label for="m-all-chk">전체선택</label>
                             </div>
                         </div>
-                        <ul class="wrap-body"></ul>
+                        <div class="wrap-body"></div>
                     `;
                 } else {
-                    htmlM = `<ul class="wrap-body"></ul>`;
+                    htmlM = `<div class="wrap-body"></div>`;
                 }
 
                 tableM.empty().html(htmlM);
@@ -341,7 +346,7 @@ class Table {
                     }
 
                     if(this.props.head[j].tooltip) {
-                        this.addToolTip(li.find('ul li').eq(j+1).find('.title'), this.props.head[j].tooltip, 'top right');
+                        this.addToolTip(li.find('ul li').eq(this.props.tableType === 'crud' ? j+1 : j).find('.title'), this.props.head[j].tooltip, 'top right');
                     }
                 });
 
@@ -351,35 +356,38 @@ class Table {
 
             });
 
-            if(this.props.tableType === 'crud') {
-                tablePC.find('td input[type="checkbox"]').off('change').on('change', ( e ) => {
-                    let idx = $(e.target).parent().parent().parent().index();
-                    if(tableM.length > 0)   tableM.find('li input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
-                    if(tablePC.find('td input[type="checkbox"]:checked').length === this.data.data.length) {
-                        tablePC.find('th input[type="checkbox"]').prop('checked', true);
-                        if(tableM.length > 0)   tableM.find('.header input[type="checkbox"]').prop('checked', true);
-                    } else {
-                        tablePC.find('th input[type="checkbox"]').prop('checked', false);
-                        if(tableM.length > 0)   tableM.find('.header input[type="checkbox"]').prop('checked', false);
-                    }
-                });
-                if(tableM.length > 0) {
-                    tableM.find('li input[type="checkbox"]').off('change').on('change', (e) => {
-                        let idx = $(e.target).parent().parent().parent().parent().parent().index();
-                        tablePC.find('td input[type="checkbox"]').eq(idx).prop('checked', $(e.target).is(':checked'));
-                        if(tableM.find('li input[type="checkbox"]:checked').length === this.data.data.length) {
-                            tablePC.find('th input[type="checkbox"]').prop('checked', true);
-                            tableM.find('.header input[type="checkbox"]').prop('checked', true);
-                        } else {
-                            tablePC.find('th input[type="checkbox"]').prop('checked', false);
-                            tableM.find('.header input[type="checkbox"]').prop('checked', false);
-                        }
-                    });
-                }
-            }
-
             if(this.props.created) {
                 this.props.created(this.ele[0], this.data.data, this.props.head, this.props.body);
+            }
+            const owner = this;
+            if(this.props.tableType === 'crud') {
+                tablePC.find('td input[type="checkbox"]').each(function ( i ) {
+                    $(this).off('change').on('change', ( e ) => {
+                        if(tableM.length > 0)   tableM.find('li input[type="checkbox"]').eq(i).prop('checked', $(e.target).is(':checked'));
+                        if(tablePC.find('td input[type="checkbox"]:checked').length === owner.data.data.length) {
+                            tablePC.find('th input[type="checkbox"]').prop('checked', true);
+                            if(tableM.length > 0)   tableM.find('.header input[type="checkbox"]').prop('checked', true);
+                        } else {
+                            tablePC.find('th input[type="checkbox"]').prop('checked', false);
+                            if(tableM.length > 0)   tableM.find('.header input[type="checkbox"]').prop('checked', false);
+                        }
+                    });
+                })
+                
+                if(tableM.length > 0) {
+                    tableM.find('li input[type="checkbox"]').each(function (i) {
+                        $(this).off('change').on('change', (e) => {
+                            tablePC.find('td input[type="checkbox"]').eq(i).prop('checked', $(e.target).is(':checked'));
+                            if(tableM.find('li input[type="checkbox"]:checked').length === owner.data.data.length) {
+                                tablePC.find('th input[type="checkbox"]').prop('checked', true);
+                                tableM.find('.header input[type="checkbox"]').prop('checked', true);
+                            } else {
+                                tablePC.find('th input[type="checkbox"]').prop('checked', false);
+                                tableM.find('.header input[type="checkbox"]').prop('checked', false);
+                            }
+                        });
+                    });
+                }
             }
         } else {
             table.find('.body').empty();
@@ -394,7 +402,7 @@ class Table {
                 this.props.body1.forEach((body, j) => {
                     if(j === 0) {
                         li.find('.accordion-header ul').append(`
-                            <li style="min-width: ${this.props.head[j].width}">
+                            <li class="number" style="min-width: ${this.props.head[j].width}">
                                 <strong class="txt">Q${data[body.label]}</strong>
                             </li>
                         `);
@@ -496,15 +504,27 @@ class Table {
         
     }
 
-    sortData (type, key) {
+    sortData (sort, key, type) {
+        let sortType = 'string';
+        if(type === 'number')  {
+            sortType = 'number';
+        }
         if(!this.data) return;
-        if(type === 'desc') {
+        if(sort === 'desc') {
             this.data.data.sort((a, b) => {
-                return String(a[key]).localeCompare(String(b[key]));
+                if(sortType === 'string') {
+                    return String(a[key]).localeCompare(String(b[key]));
+                } else {
+                    return parseInt(a[key].replace(/[^0-9]/g, "")) - parseInt(b[key].replace(/[^0-9]/g, ""));
+                }
             });
         } else {
             this.data.data.sort((a, b) => {
-                return String(b[key]).localeCompare(String(a[key]));
+                if(sortType === 'string') {
+                    return String(b[key]).localeCompare(String(a[key]));
+                } else {
+                    return parseInt(b[key].replace(/[^0-9]/g, "")) - parseInt(a[key].replace(/[^0-9]/g, ""));
+                }
             });
         }
         this.setBody();
@@ -593,10 +613,7 @@ class Table {
     }
 }
 
-$.fn.table = Plugin;
-$.fn.table.Constructor = Table;
-
-function Plugin (option, params) {
+$.fn.table = function (option, params) {
     return this.each(function () {
         var $this = $(this);
         var data = $this.data('table');
@@ -604,4 +621,5 @@ function Plugin (option, params) {
         if(!data || typeof data == 'string') $this.data('table', (data = new Table($this, options)));
         if(typeof option == 'string') data[option](params);
     });
-}
+};
+$.fn.table.Constructor = Table;
