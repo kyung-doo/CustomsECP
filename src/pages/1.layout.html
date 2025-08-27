@@ -9,20 +9,29 @@
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->
-            <h3 class="head-tit">개인통관고유부호 조회</h3>            
+      <div class="content-wrap">
+         <div class="cont-head">            
+            <h3 class="head-tit">로그인전</h3>            
+
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="javascript: void(0);" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">커뮤니티관리</span></li>                                    
+                     <li class="last-li"><a href="javascript: void(0);" class="txt" title="현재페이지">공지사항 관리</a></li>                  
+                  </ol>
+               </nav>                  
+            </div>
          </div>
          <div class="cont-body">            
             <!-- 내용 -->
             <div class="cont-area">
-               <h5 class="title-type3">기본 정보</h5>     
+               111
             </div>
             <!--// 내용 -->
          </div>
       </div>
-      <!-- //content-wrap -->
-      <!-- footer -->
-      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
-      <!-- //footer -->
+      <!-- //content-wrap -->      
    </div>
 </body>
 </html>

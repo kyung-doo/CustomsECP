@@ -9,14 +9,26 @@
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->
-            <h3 class="head-tit">공지사항 관리</h3>            
+      <div class="content-wrap">
+         <div class="cont-head">            
+            <h3 class="head-tit">공지사항관리</h3>            
+
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="javascript: void(0);" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">커뮤니티관리</span></li>                                    
+                     <li class="last-li"><a href="javascript: void(0);" class="txt" title="현재페이지">공지사항 관리</a></li>                  
+                  </ol>
+               </nav>                  
+            </div>
          </div>
          <div class="cont-body">            
             <!-- 내용 -->
             <div class="cont-area">
                <div class="search-box"> 
                   <ul>
-                     <li class="col1">
+                     <li class="col2">
                         <strong class="tit">등록기간</strong>
                         <div class="search-area">
                            <div class="calendar">
@@ -61,88 +73,80 @@
                                  </select>
                               </div>                              
                            </div>
-                           <div class="form-group medium mw-232">                     
+                           <div class="form-group medium">                     
                               <div class="form-conts">
                                  <input type="text" class="input">
                               </div>                              
                            </div> 
                         </div>                        
                      </li>   
-                     <li class="col2">
+                     <li class="col6">
                         <label class="tit" for="ex2">등록자</label>
                         <div class="search-area">
-                            <div class="form-group medium mw-360">                     
+                            <div class="form-group medium">                     
                               <div class="form-conts">
                                  <input type="text" class="input" id="ex2">
                               </div>                              
                            </div> 
                         </div>                        
                      </li> 
-                     <li class="col2">
+                     <li class="col6">
                         <label class="tit" for="ex3">게시번호</label>
                         <div class="search-area">
-                            <div class="form-group medium mw-360">                     
+                            <div class="form-group medium">                     
                               <div class="form-conts">
                                  <input type="text" class="input" id="ex3">
                               </div>                              
                            </div> 
                         </div>                        
                      </li>   
-                     <li class="col2">
+                     <li class="col6">
                         <label class="tit" for="ex4">게시활성여부</label>
                         <div class="search-area">
-                           <div class="form-group medium mw-360">                  
+                           <div class="form-group medium">                  
                               <div class="form-conts">
                                  <select class="form-select" id="ex4" required="">
-                                 <option value="" selected="" disabled="" hidden="">전체</option>
-                                 <option value="항목1">항목1</option>
-                                 <option value="항목2">항목2</option>
-                                 <option value="항목3">항목3</option>
+                                 <option value="" disabled="" hidden="">전체</option>
+                                 <option value="필수" selected="">필수</option>                                 
                                  </select>
                               </div>                              
                            </div>
                         </div>                        
                      </li>  
-                     <li class="col1">
+                     <li class="col6">
                         <label class="tit" for="ex5">업무구분</label>
                         <div class="search-area">
-                           <div class="form-group medium mw-360">                  
+                           <div class="form-group medium">                  
                               <div class="form-conts">
                                  <select class="form-select" id="ex5" required="">
-                                 <option value="" selected="" disabled="" hidden="">전체</option>
-                                 <option value="항목1">항목1</option>
-                                 <option value="항목2">항목2</option>
-                                 <option value="항목3">항목3</option>
+                                 <option value="" disabled="" hidden="">전체</option>
+                                 <option value="개인통관고유부호" selected="">개인통관고유부호</option>                                 
                                  </select>
                               </div>                              
                            </div>
                         </div>                        
                      </li>     
-                     <li class="col2">
+                     <li class="col6">
                         <label class="tit" for="ex6">자료실구분</label>
                         <div class="search-area">
-                           <div class="form-group medium mw-360">                  
+                           <div class="form-group medium">                  
                               <div class="form-conts">
                                  <select class="form-select" id="ex6" required="">
-                                 <option value="" selected="" disabled="" hidden="">전체</option>
-                                 <option value="항목1">항목1</option>
-                                 <option value="항목2">항목2</option>
-                                 <option value="항목3">항목3</option>
+                                 <option value="" disabled="" hidden="">전체</option>
+                                 <option value="일반자료실" selected="">일반자료실</option>                                 
                                  </select>
                               </div>                              
                            </div>
                         </div>                        
                      </li>      
-                     <li class="col2">
+                     <li class="col6">
                         <label class="tit" for="ex7">필수여부</label>
                         <div class="search-area">
-                           <div class="form-group medium mw-360">                  
+                           <div class="form-group medium">                  
                               <div class="form-conts">
                                  <select class="form-select" id="ex7" required="">
-                                 <option value="" selected="" disabled="" hidden="">전체</option>
-                                 <option value="항목1">항목1</option>
-                                 <option value="항목2">항목2</option>
-                                 <option value="항목3">항목3</option>
+                                 <option value="" disabled="" hidden="">전체</option>
+                                 <option value="전체" selected="">전체</option>                                 
                                  </select>
                               </div>                              
                            </div>
@@ -168,6 +172,9 @@
                         </select>
                      </div>                     
                   </div>                  
+                  <div class="right-box">
+                     <button type="button" class="btn primary medium">신규</button>                     
+                  </div>
                </div>
                <div class="wrap-check-tbl">
                   <div class="table-wrap">
@@ -176,7 +183,7 @@
                         <colgroup>
                            <col style="width:80px;">                                                                                 
                            <col style="width:160px;">                                                                                 
-                           <col style="width:220px;">                                                                                 
+                           <col>                                                                                 
                            <col style="width:150px;">                                                                                 
                            <col style="width:120px;">                                                                                 
                            <col style="width:90px;">                                                                                 
@@ -205,7 +212,7 @@
                            <tr>
                               <td>1</td>                              
                               <td>202506131988</td>                        
-                              <td><a href="#none" class="cl-7 tb-title">수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류</a></td>                              
+                              <td class="text-left"><a href="#none" class="cl-7 tb-title">수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류</a></td>                              
                               <td>개인통관고유부호</td>                        
                               <td>일반자료실</td>                        
                               <td>필수</td>                        
@@ -218,7 +225,7 @@
                            <tr>
                               <td>2</td>                              
                               <td>202506131988</td>                        
-                              <td><a href="#none" class="cl-7 tb-title">수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류</a></td>                              
+                              <td class="text-left"><a href="#none" class="cl-7 tb-title">수입통관 주요.반복</a></td>                              
                               <td>개인통관고유부호</td>                        
                               <td>일반자료실</td>                        
                               <td>필수</td>                        
@@ -231,7 +238,7 @@
                            <tr>
                               <td>3</td>                              
                               <td>202506131988</td>                        
-                              <td><a href="#none" class="cl-7 tb-title">수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류</a></td>                              
+                              <td class="text-left"><a href="#none" class="cl-7 tb-title">수입통관 주요.반복</a></td>                              
                               <td>개인통관고유부호</td>                        
                               <td>일반자료실</td>                        
                               <td>필수</td>                        
@@ -244,7 +251,7 @@
                            <tr>
                               <td>4</td>                              
                               <td>202506131988</td>                        
-                              <td><a href="#none" class="cl-7 tb-title">수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류수입통관 주요.반복 오류</a></td>                              
+                              <td class="text-left"><a href="#none" class="cl-7 tb-title">수입통관 주요.반복</a></td>                              
                               <td>개인통관고유부호</td>                        
                               <td>일반자료실</td>                        
                               <td>필수</td>                        
@@ -281,23 +288,14 @@
                   </div>
                   <button class="page-navi next">다음</button>
                </div>
-               <div class="btn-area btn-end">
-                  <div class="align">
-                     <button type="button" class="btn primary large">신규</button>                     
-                  </div>
-               </div>
 
 
 
-               
             </div>
             <!--// 내용 -->
          </div>
       </div>
-      <!-- //content-wrap -->
-      <!-- footer -->
-      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
-      <!-- //footer -->
+      <!-- //content-wrap -->      
    </div>
 </body>
 </html>

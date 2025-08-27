@@ -6,8 +6,8 @@
     .compulsory-txt{margin: 10px 6px 0 0;}
   }
 
-  .tit {padding-right: 12px;
-    strong {color: #1D56BC;margin: 0 3px;}
+  .tit {padding-right: 12px;font-size: 18px;
+    strong {color: #1D56BC;margin: 0 3px;font-size: 18px;}
   }
 
   .choice {margin: 0 5px 0 11px;}
@@ -38,17 +38,20 @@
 // 테이블 
 .table-wrap {position: relative;min-width: 100%;width: 100%;word-break: break-all;overflow-x: auto;overflow-y: hidden;
 
-  //타입1
-  &.type1{
-    tr:hover td{background-color: #EFF5FF;position: relative;
-      &:first-child:before{content:"";display: block;position: absolute;top:0;left:0;width:4px;height: 53.9px;background-color: #246BEB;}
-    }
+  tr.on td{background-color: #EFF5FF;position: relative;
+    &:first-child:before{content:"";display: block;position: absolute;top:0;left:0;width:4px;height: 53.9px;background-color: #246BEB;}
   }
 
+  tr:not(.on):hover td{background-color: #EDF1F5;}
+
+  tr.menu-choice td{height: 527px;
+    i{opacity: 0.5;}
+    p{color:#717171}
+  }
 
   table {table-layout: fixed;width: 100%;border-spacing: 0;}
 
-  th {font-size: 15px;border-bottom: 1px solid #58616A;vertical-align: middle;background-color: #E6E8EA;position: relative;text-align: center;line-height: 150%;padding: 13px 16px;font-weight: 700;
+  th {font-size: 14px;border-bottom: 1px solid #58616A;vertical-align: middle;background-color: #E6E8EA;position: relative;text-align: center;line-height: 150%;padding: 10px 16px;font-weight: 700;
     *:not(.tooltip-tit *) {font-weight: 700;font-size: 15px;}
     .tooltip-tit{display: flex;justify-content: center;      
       .title{padding-right: 20px;position: relative;}

@@ -9,7 +9,19 @@
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->
-            <h3 class="head-tit">개인통관고유부호 조회</h3>            
+      <div class="content-wrap">
+         <div class="cont-head">            
+            <h3 class="head-tit">로그인전</h3>            
+
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="javascript: void(0);" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">커뮤니티관리</span></li>                                    
+                     <li class="last-li"><a href="javascript: void(0);" class="txt" title="현재페이지">공지사항 관리</a></li>                  
+                  </ol>
+               </nav>                  
+            </div>
          </div>
          <div class="cont-body">            
             <!-- 내용 -->
@@ -30,7 +42,7 @@
                                     <li class="col2">
                                        <label class="tit" for="ex1">검색조건1</label>
                                        <div class="search-area">
-                                          <div class="form-group medium mw-216">                     
+                                          <div class="form-group medium">                     
                                              <div class="form-conts">
                                                 <input type="text" class="input" id="ex1">
                                              </div>                              
@@ -40,7 +52,7 @@
                                     <li class="col2">
                                        <label class="tit" for="ex2">검색조건2</label>
                                        <div class="search-area">
-                                          <div class="form-group medium mw-216">                     
+                                          <div class="form-group medium">                     
                                              <div class="form-conts">
                                                 <input type="text" class="input" id="ex2">
                                              </div>                              
@@ -56,8 +68,16 @@
                               </div>
                               <div class="board-top tbl-top">
                                  <div class="left-box">
-                                    <strong class="tit top-txt">전체<strong>240</strong>개</strong>                                    
-                                 </div>                  
+                                    <strong class="tit top-txt">전체<strong>240</strong>개</strong>
+                                    <div class="top-txt">
+                                       <select class="form-select-sort large" title="정보 구분 선택">                           
+                                          <option value="">10개씩 보기</option>               
+                                          <option value="">10개씩 보기</option>               
+                                          <option value="">10개씩 보기</option>               
+                                          <option value="">10개씩 보기</option>               
+                                       </select>
+                                    </div>                     
+                                 </div>                                                   
                               </div>
                               <div class="wrap-check-tbl">
                                  <div class="table-wrap">
@@ -76,11 +96,11 @@
                                        <tbody>                           
                                           <tr>
                                              <td>MYC_HLC_00001</td>                                             
-                                             <td class="tb-title text-left"><a href="#none">개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다</a></td>                                             
+                                             <td class="tb-title text-left">개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다</td>                                             
                                           </tr>  
                                           <tr>
                                              <td>MYC_HLC_00001</td>                                             
-                                             <td class="tb-title text-left"><a href="#none">개인통관고유부호</a></td>                                             
+                                             <td class="tb-title text-left">개인통관고유부호</td>                                             
                                           </tr>  
                                           <!-- 데이터없음 -->  
                                           <tr>
@@ -114,18 +134,11 @@
                   <!-- // 주소 입력 -->
                </div>
                <!-- 팝업 사용후 삭제해주세요 -->
-
-
-
-               
             </div>
             <!--// 내용 -->
          </div>
       </div>
-      <!-- //content-wrap -->
-      <!-- footer -->
-      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
-      <!-- //footer -->
+      <!-- //content-wrap -->      
    </div>
 </body>
 </html>

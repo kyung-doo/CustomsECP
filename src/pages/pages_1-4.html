@@ -9,7 +9,19 @@
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
       <!-- content-wrap -->
-            <h3 class="head-tit">자주찾는서비스 관리</h3>            
+      <div class="content-wrap">
+         <div class="cont-head">            
+            <h3 class="head-tit">자주찾는서비스관리</h3>            
+
+            <div class="head-util">
+               <nav class="breadcrumb-wrap" id="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="home"><a href="javascript: void(0);" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li><span class="txt">커뮤니티관리</span></li>                                    
+                     <li class="last-li"><a href="javascript: void(0);" class="txt" title="현재페이지">공지사항 관리</a></li>                  
+                  </ol>
+               </nav>                  
+            </div>
          </div>
          <div class="cont-body">            
             <!-- 내용 -->
@@ -19,17 +31,17 @@
                      <li class="col2">
                         <label class="tit" for="ex1">제목</label>
                         <div class="search-area">
-                            <div class="form-group medium mw-360">                     
+                            <div class="form-group medium">                     
                               <div class="form-conts">
                                  <input type="text" class="input" id="ex1">
                               </div>                              
                            </div> 
                         </div>                        
                      </li>
-                     <li class="col2">
+                     <li class="col6">
                         <label class="tit" for="ex2">사용여부</label>
                         <div class="search-area">
-                           <div class="form-group medium mw-360">                  
+                           <div class="form-group medium">                  
                               <div class="form-conts">
                                  <select class="form-select" id="ex2" required="">
                                  <option value="" selected="" disabled="" hidden="">전체</option>
@@ -90,7 +102,16 @@
                            <tr>
                               <td>1</td>
                               <td><a href="#none" class="cl-7">MYC_FRV_000001</a></td>
-                              <td class="tb-title">개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다</td>
+                              <td class="text-left tb-title">개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다개인통관고유부호 갱신이 필요합니다</td>
+                              <td>1</td>
+                              <td>사용</td>
+                              <td>2025-05-06</td>
+                              <td>opm291</td>                                                            
+                           </tr>
+                           <tr>
+                              <td>2</td>
+                              <td><a href="#none" class="cl-7">MYC_FRV_000001</a></td>
+                              <td class="text-left tb-title">개인통관고유부호</td>
                               <td>1</td>
                               <td>사용</td>
                               <td>2025-05-06</td>
@@ -223,25 +244,15 @@
                <div class="btn-area btn-end">
                   <div class="align">
                      <button type="button" class="btn tertiary medium">삭제</button>
-                     <button type="button" class="btn secondary medium">저장</button>
+                     <button type="button" class="btn tertiary medium">신규</button>
+                     <button type="button" class="btn primary medium">저장</button>
                   </div>
-               </div>
-               <div class="btn-area btn-end">
-                  <div class="align">
-                     <button type="button" class="btn primary large">신규</button>
-                  </div>
-               </div>
-
-
-                 
+               </div>               
             </div>
             <!--// 내용 -->
          </div>
       </div>
-      <!-- //content-wrap -->
-      <!-- footer -->
-      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
-      <!-- //footer -->
+      <!-- //content-wrap -->      
    </div>
 </body>
 </html>

@@ -6,28 +6,29 @@
 
     .content-wrap{display: flex;align-items: center;justify-content: center;padding-top: 64px;}
     
-    .wrap-manager-login{width:528px;
+    .wrap-manager-login{width:528px;position: relative;
+        &::before{content:"";display: block;position: absolute;top:0;left:0;width:100%;height: 8px;border-radius: 8px 8px 0 0;background: linear-gradient(270deg, #246BEB 0%, #003863 79.38%, #E4032E 99.22%);}
         .manager-login{background-color: #fff;padding: 64px;border-radius: 8px;
-            .title{font-size: 25px;margin-bottom: 17px;display: block;}
-            .check-box{border-radius: 4px;border: 1px solid #D4E1FF;background: #E9F0FF;padding: 16px;display: flex;align-items: center;gap: 12px;margin: 48px 0;line-height: 1px;}
+            .title{font-size: 28px;margin-bottom: 17px;display: block;line-height: 150%;}
+            .check-box{border-radius: 4px;border: 1px solid #D4E1FF;background: #E9F0FF;padding: 16px;display: flex;align-items: center;gap: 12px;margin: 33px 0 44px 0;line-height: 1px;}
             .inp-box{
-                label{font-size: 15px;font-weight: 700;margin-bottom: 12px;display: block;}
+                label{font-size: 14px;font-weight: 700;margin-bottom: 12px;display: block;}
                 input{padding-left: 45px;
-                    &::placeholder{font-size: 19px;color:#8E8E8E}
+                    &::placeholder{font-size: 18px;color:#8E8E8E}
                 }
                 .area{margin-bottom: 32px;}
                 .form-conts{position: relative;                    
                     &::before{content:"";display: block;position: absolute;top:0;left:16px;width:16px;height:100%;background-repeat: no-repeat;background-position: center;}
                     &.id::before{background-image: url("../assets/icons/manager-id.svg");}
-                    &.pass::before{background-image: url("../assets/icons/manager-pass.svg");}
+                    &.pass::before{background-image: url("../assets/icons/manager-pass.svg");}                    
                 }
             }
-            .form-check label{font-weight: 400;}
+            .form-check label{font-weight: 400;font-size:16px}
             .btn-area{margin-top: 60px;
-                button{width:100%;}
+                button{width:100%;height:56px}
             }
         }
-        > .txt{margin-top: 24px;
+        > .txt{margin-top: 24px;text-align: center;
             strong{margin-left: 5px;}
         }
     }

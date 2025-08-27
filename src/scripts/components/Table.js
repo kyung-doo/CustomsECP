@@ -623,3 +623,24 @@ $.fn.table = function (option, params) {
     });
 };
 $.fn.table.Constructor = Table;
+
+
+$(function(){
+    var btn = $('.table-wrap a');
+    var btnChk = $('.table-wrap tbody input[type=checkbox]');
+
+    btn.click(function(){
+        $(this).closest('.table-wrap').find('tr').removeClass('on')        
+        $(this).closest('tr').addClass('on')
+    });    
+
+    btnChk.click(function(){
+        var checked = $(this).is(':checked');
+        
+        if(checked){
+            $(this).closest('tr').addClass('on')
+        }else{
+            $(this).closest('tr').removeClass('on')
+        }            
+    });
+})

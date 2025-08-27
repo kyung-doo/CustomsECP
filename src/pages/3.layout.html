@@ -8,13 +8,12 @@
       <!-- header -->
       <%= _.template(require('fs').readFileSync('./src/layouts/header.html', 'utf8'))({}) %>
       <!-- //header -->
-      <!-- content-wrap -->            
-         </div>
+      <!-- content-wrap -->                     
+      <div class="content-wrap">
          <div class="cont-body">
             <div class="wrap-manager-login">
                <div class="manager-login">
-                  <strong class="title">전자상거래포털 관리자 로그인</strong>
-                  <p class="txt">로그인 후 관리자 기능을 이용하실 수 있습니다.</p>
+                  <strong class="title">전자상거래포털<br> 관리자 로그인</strong>                  
                   <p class="check-box"><i class="icon info-fill medium"></i>아이디 혹은 비밀번호를 확인하십시오.</p>
                   <div class="inp-box">
                      <div class="area">
@@ -38,7 +37,7 @@
                         <label for="chk_2">아이디 저장</label>
                      </div>
                      <div class="btn-area">
-                        <button type="button" class="btn primary large">로그인</button>
+                        <button type="button" class="btn primary large login">로그인</button>
                      </div>
                   </div>
                </div>
@@ -46,10 +45,7 @@
             </div>            
          </div>
       </div>
-      <!-- //content-wrap -->
-      <!-- footer -->
-      <%= _.template(require('fs').readFileSync('./src/layouts/footer.html', 'utf8'))({}) %>
-      <!-- //footer -->
+      <!-- //content-wrap -->      
    </div>
 </body>
 </html>
