@@ -1,8 +1,11 @@
 @use "../mixin" as *;
 
-.breadcrumb {display: flex;
+.breadcrumb {display: flex;margin-right: -7px;
   li {position: relative;margin: 0 8px;display: flex;    
-    * {position: relative;display: flex;align-items: center;font-size: 15px;padding: 6px 6px 7px 6px;gap: 8px;
+    &.last-li{
+      a{padding-right: 0;}
+    }
+    * {position: relative;display: flex;align-items: center;font-size: 15px;padding: 6px 6px 7px 6px;gap: 8px;      
       &:not(span) {text-decoration: underline;line-height: 150%;
         &:hover {background-color: #EDF1F5;border-radius: 4px;}
         &:active {background-color: #CDD7E4;border-radius: 4px;}

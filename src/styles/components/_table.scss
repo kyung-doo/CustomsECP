@@ -6,8 +6,8 @@
     .compulsory-txt{margin: 10px 6px 0 0;}
   }
 
-  .tit {padding-right: 12px;font-size: 18px;
-    strong {color: #1D56BC;margin: 0 3px;font-size: 18px;}
+  .tit {padding-right: 12px;
+    strong {color: #1D56BC;margin: 0 3px;}
   }
 
   .choice {margin: 0 5px 0 11px;}
@@ -39,19 +39,19 @@
 .table-wrap {position: relative;min-width: 100%;width: 100%;word-break: break-all;overflow-x: auto;overflow-y: hidden;
 
   tr.on td{background-color: #EFF5FF;position: relative;
-    &:first-child:before{content:"";display: block;position: absolute;top:0;left:0;width:4px;height: 53.9px;background-color: #246BEB;}
+    &:first-child:before{content:"";display: block;position: absolute;top:0;left:0;width:4px;height: 35px;background-color: #246BEB;}
   }
 
   tr:not(.on):hover td{background-color: #EDF1F5;}
 
-  tr.menu-choice td{height: 527px;
+  tr.menu-choice td{height: 363px;
     i{opacity: 0.5;}
     p{color:#717171}
   }
 
   table {table-layout: fixed;width: 100%;border-spacing: 0;}
 
-  th {font-size: 14px;border-bottom: 1px solid #58616A;vertical-align: middle;background-color: #E6E8EA;position: relative;text-align: center;line-height: 150%;padding: 10px 16px;font-weight: 700;
+  th {font-size: 14px;border-bottom: 1px solid #58616A;vertical-align: middle;background-color: #E6E8EA;position: relative;text-align: center;line-height: 150%;padding: 0 16px;font-weight: 700;height:35px;
     *:not(.tooltip-tit *) {font-weight: 700;font-size: 15px;}
     .tooltip-tit{display: flex;justify-content: center;      
       .title{padding-right: 20px;position: relative;}
@@ -66,7 +66,7 @@
     }        
   }
 
-  td {border-bottom: 1px solid #E4E4E4;vertical-align: middle;text-align: center;line-height: 150%;padding: 14px 16px;}   
+  td {border-bottom: 1px solid #E4E4E4;vertical-align: middle;text-align: center;line-height: 150%;padding: 6px 16px;}   
 
   .th-turn {width: 20px;height: 20px;position: absolute;top: 50%;right: 0;background-image: url(../assets/icons/tb-turn.svg);background-position: center;background-color: rgba(0, 0, 0, 0);transition: all 0.3s;transform: translateY(-50%);padding: 0;overflow:hidden;
     &.active {transform: rotate(180deg);transform-origin: 50% 30%;}

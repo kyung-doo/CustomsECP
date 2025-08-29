@@ -2,7 +2,7 @@
 .layout-area{display: flex;flex-wrap: wrap;
   .box1{width:60%}
   .box2{width: calc(40% - 24px);margin-left: 24px;}
-  .box{padding: 32px;border:1px solid #F0F0F0;border-radius: 8px;}
+  .box{padding: 20px;border:1px solid #F0F0F0;border-radius: 4px;}
 } 
 
 //a태그
@@ -205,14 +205,14 @@ a[class*=cl-]{text-decoration: underline;}
 }
 
 //검색영역 
-.search-box {padding: 24px 32px 16px 32px;border-radius: 8px;background-color: #F4F5F6;  
-  ul {display: flex;margin-left: -24px;flex-wrap: wrap;gap:24px 0;
+.search-box {padding: 15px;background-color: #F4F5F6;  
+  ul {display: flex;margin-left: -24px;flex-wrap: wrap;gap:20px 0;
     li {display: flex;align-items: flex-start;padding-left: 24px;flex-direction: column;gap:8px;
       &:first-child{margin-top: 0;}
       .search-area {position: relative;display: flex;width: 100%;gap: 8px;flex-wrap: wrap;align-items: center;        
         &[class*=nowrap]{flex-wrap: nowrap;}
       }
-      .tit{display:inline;position:relative;align-items:center;font-size:14px;line-height: 150%;font-weight:700;}
+      .tit{display:inline;position:relative;align-items:center;line-height: 150%;font-weight:700;}
       .form-check.medium.tit{width:150px;min-width:150px}      
       .form-group {width: 100%;min-width: 10px;}
       .check-area {gap: 15px;}
@@ -233,7 +233,7 @@ a[class*=cl-]{text-decoration: underline;}
       .wrap-form-chip{display: flex;gap: 8px;}
     }    
   }
-  .btn-area {margin-top: 32px;padding-top: 16px;border-top: 1px solid #E6E8EA;}
+  .btn-area {margin-top: 16px;padding-top: 16px;border-top: 1px solid #E6E8EA;}
 }
 
 //하단버튼 반응형
