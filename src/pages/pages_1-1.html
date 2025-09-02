@@ -12,13 +12,12 @@
       <div class="content-wrap">
          <div class="cont-head">            
             <h3 class="head-tit">공지사항관리</h3>            
-
             <div class="head-util">
                <nav class="breadcrumb-wrap" id="breadcrumb">
                   <ol class="breadcrumb">
-                     <li class="home"><a href="javascript: void(0);" class="txt" title="홈으로 바로가기">홈</a></li>
+                     <li class="home"><span class="txt">홈</span></li>
                      <li><span class="txt">커뮤니티관리</span></li>                                    
-                     <li class="last-li"><a href="javascript: void(0);" class="txt" title="현재페이지">공지사항 관리</a></li>                  
+                     <li class="last-li"><span class="txt">공지사항 관리</span></li>                  
                   </ol>
                </nav>                  
             </div>
@@ -141,16 +140,20 @@
                      </li>      
                      <li class="col6">
                         <label class="tit" for="ex7">필수여부</label>
-                        <div class="search-area">
-                           <div class="form-group medium">                  
-                              <div class="form-conts">
-                                 <select class="form-select" id="ex7" required="">
-                                 <option value="" disabled="" hidden="">전체</option>
-                                 <option value="전체" selected="">전체</option>                                 
-                                 </select>
-                              </div>                              
-                           </div>
-                        </div>                        
+                        <div class="search-area check-area">
+                           <div class="form-check medium">
+                              <input type="radio" name="radio" id="radio1">
+                              <label for="radio1">전체</label>
+                           </div>                          
+                           <div class="form-check medium">
+                              <input type="radio" name="radio" id="radio2">
+                              <label for="radio2">신청</label>
+                           </div>                          
+                           <div class="form-check medium">
+                              <input type="radio" name="radio" id="radio3">
+                              <label for="radio3">접수</label>
+                           </div>                                                     
+                        </div>
                      </li>                         
                   </ul>
                   <div class="btn-area btn-end">

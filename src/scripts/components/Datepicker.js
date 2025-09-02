@@ -145,7 +145,23 @@ class Datepicker {
         $(window).on('resize.datepicker', () => {
             this.calendar.css({left: this.ele.offset().left, top: this.ele.offset().top + 50});
         });
-        $("html, body").trigger('scroll.datepicker');
+        $("html, body").trigger('scroll.datepicker');                
+
+        const exceptions = ['.calendar-form','.calendar-wrap','button'];
+
+        $(document).on('click', function(e) {
+            let isInsideException = exceptions.some(selector =>
+                $(e.target).closest(selector).length > 0
+            );
+
+            if (!isInsideException) {
+                $('.datepicker').hide();
+                $('.calendar-form').removeClass('on')
+                $('.calendar-form input').removeAttr('disabled')
+
+            }
+        });
+
         this.calendar.find(".btn-cancel").on('click', () => {
             this.hideCalendar();
         });

@@ -209,7 +209,7 @@ a[class*=cl-]{text-decoration: underline;}
   ul {display: flex;margin-left: -24px;flex-wrap: wrap;gap:20px 0;
     li {display: flex;align-items: flex-start;padding-left: 24px;flex-direction: column;gap:8px;
       &:first-child{margin-top: 0;}
-      .search-area {position: relative;display: flex;width: 100%;gap: 8px;flex-wrap: wrap;align-items: center;        
+      .search-area {position: relative;display: flex;width: 100%;gap: 8px;flex-wrap: wrap;align-items: center;height:100%;
         &[class*=nowrap]{flex-wrap: nowrap;}
       }
       .tit{display:inline;position:relative;align-items:center;line-height: 150%;font-weight:700;}
