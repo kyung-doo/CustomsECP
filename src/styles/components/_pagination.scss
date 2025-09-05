@@ -1,13 +1,39 @@
 @use "../mixin" as *;
 .paging {display: flex;gap: 8px;align-items: center;justify-content: center;padding-bottom: 2px;  
-  & > ul:not(.pages){display: flex;}  
-  & > ul:not(.pages) a{display: flex;min-width: 62px;height: 40px;align-items: center;position: relative;color: #555;padding: 6px 8px 6px 4px;border-radius: 4px;justify-content: center;}
-  & > ul:not(.pages) li.on a span{color: #8E8E8E;pointer-events: none;}
-  & > ul:not(.pages) li.on a:hover{background-color: #fff;cursor: default;}
-  .prev {justify-content: flex-end;padding-right: 2px;}  
+
+  //다음 이전
+  & > ul:not(.pages){display: flex;
+    li{width:35px;height:35px;
+      a{display: flex;align-items: center;position: relative;color: #555;border-radius: 4px;justify-content: center;width:100%;height: 100%;
+        &:hover{background-color: #EDF1F5;}
+        span{font-size:0;}
+      }   
+      &[class*=more] a{
+        &::before,&::after{content:"";display: block;position: absolute;background-repeat: no-repeat;background-position: center;width:15px;height: 15px;}        
+      }   
+      &.morePrev a{        
+        &::before,&::after{background-image: url("../assets/icons/btn-arrow-left.svg");}
+        &::before{left:5px;}
+        &::after{right:5px;}
+      }
+      &.moreNext a{
+        &::before,&::after{background-image: url("../assets/icons/btn-arrow-right.svg");}
+        &::before{left:5px;}
+        &::after{right:5px;}
+      }
+
+      &.prev a{background-image: url("../assets/icons/btn-arrow-left.svg");background-repeat: no-repeat;background-position: center}      
+      &.next a{background-image: url("../assets/icons/btn-arrow-right.svg");background-repeat: no-repeat;background-position: center}
+    }        
+  }    
+
+  //페이징 넘버   
   .pages {display: flex;gap: 8px;}
   .pages li a,.pages li strong {width: 35px;height: 35px;display: flex;justify-content: center;align-items: center;color: #555;background-color: #fff;border-radius: 4px;}  
-  .pages li a:hover, & > ul:not(.pages) a:hover {background-color: #EDF1F5;}
-  a.page-link:active {background-color: #CDD7E4;}  
+  .pages li a:hover{background-color: #EDF1F5;}  
   .pages li strong {background-color: #003675;color: #fff;pointer-events: none;}  
 }
+
+
+
+

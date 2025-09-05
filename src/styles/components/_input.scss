@@ -71,7 +71,8 @@
 }
 
 //disabled
-input[type=text]:disabled,textarea:disabled,select:disabled,select:disabled option,.password-input:disabled + input[type=password],.form-tit-group:has(input:disabled){background-color: #D8D8D8 !important;opacity:1 !important;border-color:#C6C6C6 !important;}
+input[type=text]:disabled,textarea:disabled,select:disabled,select:disabled option,.password-input:disabled + input[type=password],.form-tit-group:has(input:disabled){background-color: #D8D8D8 !important;opacity:0.5 !important;border-color:#C6C6C6 !important;}
+input[type=text][readonly],textarea[readonly],select[readonly],select[readonly] option,.password-input[readonly] + input[type=password],.form-tit-group:has(input[readonly]){background-color: #f1f1f1;}
 
 //비밀번호
 input[data-ui=hidden-input]{line-height:48px}

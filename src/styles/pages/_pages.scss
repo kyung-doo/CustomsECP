@@ -1,3 +1,6 @@
+//트리영역
+.dynatree-container a{text-decoration: none !important;}
+
 //레이아웃 영역
 .layout-area{display: flex;flex-wrap: wrap;
   .box1{width:60%}
@@ -77,9 +80,7 @@ a[class*=cl-]{text-decoration: underline;}
 .solid-line-bottom4{border-bottom:1px solid #E4E4E4;}
 
 //.... 처리 
-.tb-title{display: block;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;
-  //a.tb-title:hover{text-decoration: underline;}  
-}   
+.ellipsis{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}   
 
 //툴팁 아이콘 
 .tooltip-ico{width:16px;height:16px;background-image:url("../assets/icons/exclamation.svg");background-size:contain;font-size:0;background-color:rgba(0,0,0,0);font-size:0 !important}
@@ -209,20 +210,21 @@ a[class*=cl-]{text-decoration: underline;}
   ul {display: flex;margin-left: -24px;flex-wrap: wrap;gap:20px 0;
     li {display: flex;align-items: flex-start;padding-left: 24px;flex-direction: column;gap:8px;
       &:first-child{margin-top: 0;}
-      .search-area {position: relative;display: flex;width: 100%;gap: 8px;flex-wrap: wrap;align-items: center;height:100%;
+      .search-area {position: relative;display: flex;width: 100%;gap: 8px;flex-wrap: wrap;align-items: flex-start;height:100%;
         &[class*=nowrap]{flex-wrap: nowrap;}
       }
       .tit{display:inline;position:relative;align-items:center;line-height: 150%;font-weight:700;}
       .form-check.medium.tit{width:150px;min-width:150px}      
       .form-group {width: 100%;min-width: 10px;}
-      .check-area {gap: 15px;}
-      &.col1 {width: 100%;}
-      &.col2 {width: 50%;}
-      &.col3 {width: 33.333%;}
-      &.col4 {width: 25%;}
-      &.col5 {width: 20%;}
-      &.col6 {width: 16.6666%;}
-      &.col7 {width: 14.2857%;}
+      .check-area {gap: 15px;display: flex;flex-direction: row;}
+      &[class*=col]{width: 100%;min-width: 250px;}
+      &.col1 {max-width: 100%;}
+      &.col2 {max-width: 50%;}
+      &.col3 {max-width: 33.333%;}
+      &.col4 {max-width: 25%;}
+      &.col5 {max-width: 20%;}
+      &.col6 {max-width: 16.6666%;}
+      &.col7 {max-width: 14.2857%;}
       .advice-txt{margin-top: 0;}
       .search-area-box{width:100%;
         .advice-txt{margin-top: 12px;}

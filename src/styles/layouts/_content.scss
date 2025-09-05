@@ -20,7 +20,7 @@
   .paging{margin-top: 24px;}
 }
 
-.content-wrap {width: 100%;min-width:1900px;position: relative;flex: 1;height: 100%;padding: 76px 20px 20px 236px;
+.content-wrap {width: 100%;position: relative;flex: 1;height: 100%;padding: 76px 20px 20px 236px;
   &::before{content:"";display: block;position: absolute;top:0;left:0;width:215px;height: 100%;background-color: #1E2124;}
   .cont-head {display: flex;align-items: center;justify-content: space-between;margin-bottom: 15px;
     .head-util {display: flex;justify-content: space-between;align-items: center;

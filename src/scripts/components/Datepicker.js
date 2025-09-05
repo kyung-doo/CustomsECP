@@ -80,15 +80,17 @@ class Datepicker {
                     }
                 }
             }
-        });
+        });    
 
-        this.btn.on('click', () => {
-            if(!this.isShow) {
-                this.isShow = true;
+        this.btn.on('click', (e) => {
+            
+            if(!this.isShow) {                
+                this.isShow = true;                
                 this.showCalendar();                                
-            }
-            this.btn.closest('.calendar-form').addClass('on');
-        });
+                
+            }   
+            this.btn.closest('.calendar-form').addClass('on');                             
+        });          
     }
 
     showCalendar () {
@@ -158,9 +160,8 @@ class Datepicker {
                 $('.datepicker').hide();
                 $('.calendar-form').removeClass('on')
                 $('.calendar-form input').removeAttr('disabled')
-
-            }
-        });
+            }           
+        });                
 
         this.calendar.find(".btn-cancel").on('click', () => {
             this.hideCalendar();
@@ -461,3 +462,8 @@ $.fn.datepicker = function (option, params) {
     });
 };
 $.fn.datepicker.Constructor = Datepicker;
+
+
+ $(document).ready(function () {
+              
+});

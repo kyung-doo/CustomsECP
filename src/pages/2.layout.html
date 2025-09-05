@@ -11,8 +11,7 @@
       <!-- content-wrap -->
       <div class="content-wrap">
          <div class="cont-head">            
-            <h3 class="head-tit">로그인후</h3>            
-
+            <h3 class="head-tit">공지사항관리</h3>            
             <div class="head-util">
                <nav class="breadcrumb-wrap" id="breadcrumb">
                   <ol class="breadcrumb">
@@ -22,11 +21,308 @@
                   </ol>
                </nav>                  
             </div>
-         </div>
+         </div>                  
          <div class="cont-body">            
             <!-- 내용 -->
-            <div class="cont-area">
-               111
+            <div class="cont-area">               
+               <div class="search-box"> 
+                  <form action="" id="myForm">
+                     <ul>
+                        <li class="col2">
+                           <strong class="tit">등록기간</strong>
+                           <div class="search-area">
+                              <div class="calendar">
+                                 <div class="calendar-form" data-ui="datepicker" data-props="maxInput: '#endDate'">
+                                    <input id="startDate" type="text" title="시작날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                    <button class="calendar-btn">시작 달력보기</button>
+                                 </div>
+                                 <i class="hy">~</i>
+                                 <div class="calendar-form" data-ui="datepicker" data-props="minInput: '#startDate'">
+                                    <input id="endDate" type="text" title="종료날짜를 입력해주세요" placeholder="YYYY-MM-DD" maxlength="10">
+                                    <button class="calendar-btn">종료 달력보기</button>
+                                 </div>
+                              </div>
+                              <div class="form-chip large">
+                                 <input type="radio" class="radio" name="chk_1" id="chk_chip_1">
+                                 <label class="form-chip-outline" for="chk_chip_1">당일</label>
+                              </div>
+                              <div class="form-chip large">
+                                 <input type="radio" class="radio" name="chk_1" id="chk_chip_2">
+                                 <label class="form-chip-outline" for="chk_chip_2">1개월</label>
+                              </div>
+                              <div class="form-chip large">
+                                 <input type="radio" class="radio" name="chk_1" id="chk_chip_3">
+                                 <label class="form-chip-outline" for="chk_chip_3">1년</label>
+                              </div>
+                              <div class="form-chip large">
+                                 <input type="radio" class="radio" name="chk_1" id="chk_chip_4" checked>
+                                 <label class="form-chip-outline" for="chk_chip_4">전체</label>
+                              </div>
+                           </div>                        
+                        </li>  
+                        <li class="col2">
+                           <label class="tit" for="ex1">검색구분</label>
+                           <div class="search-area nowrap type1">
+                              <div class="form-group medium mw-120">                  
+                                 <div class="form-conts">
+                                    <select class="form-select" id="ex1" required="">
+                                    <option value="" selected="" disabled="" hidden="">전체</option>
+                                    <option value="항목1">항목1</option>
+                                    <option value="항목2">항목2</option>
+                                    <option value="항목3">항목3</option>
+                                    </select>
+                                 </div>                              
+                              </div>
+                              <div class="form-group medium">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input">
+                                 </div>                              
+                              </div> 
+                           </div>                        
+                        </li>   
+                        <li class="col6">
+                           <label class="tit" for="ex2">등록자</label>
+                           <div class="search-area">
+                              <div class="form-group medium">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" id="ex2" readonly value="readonly">
+                                 </div>                              
+                              </div> 
+                           </div>                        
+                        </li> 
+                        <li class="col6">
+                           <label class="tit" for="ex3">게시번호</label>
+                           <div class="search-area">
+                              <div class="form-group medium">                     
+                                 <div class="form-conts">
+                                    <input type="text" class="input" id="ex3" disabled value="disabled">
+                                 </div>                              
+                              </div> 
+                           </div>                        
+                        </li>   
+                        <li class="col6">
+                           <label class="tit" for="ex4">게시활성여부</label>
+                           <div class="search-area">
+                              <div class="form-group medium">                  
+                                 <div class="form-conts">
+                                    <select class="form-select" id="ex4" required="">
+                                    <option value="" disabled="" hidden="">전체</option>
+                                    <option value="필수" selected="">필수</option>                                 
+                                    </select>
+                                 </div>                              
+                              </div>
+                           </div>                        
+                        </li>  
+                        <li class="col6">
+                           <label class="tit" for="ex5">업무구분</label>
+                           <div class="search-area">
+                              <div class="form-group medium">                  
+                                 <div class="form-conts">
+                                    <select class="form-select" id="ex5" required="">
+                                    <option value="" disabled="" hidden="">전체</option>
+                                    <option value="개인통관고유부호" selected="">개인통관고유부호</option>                                 
+                                    </select>
+                                 </div>                              
+                              </div>
+                           </div>                        
+                        </li>     
+                        <li class="col6">
+                           <label class="tit" for="ex6">자료실구분</label>
+                           <div class="search-area">
+                              <div class="form-group medium">                  
+                                 <div class="form-conts">
+                                    <select class="form-select" id="ex6" required="">
+                                    <option value="" disabled="" hidden="">전체</option>
+                                    <option value="일반자료실" selected="">일반자료실</option>                                 
+                                    </select>
+                                 </div>                              
+                              </div>
+                           </div>                        
+                        </li>      
+                        <li class="col6 minw-230">
+                           <label class="tit" for="ex7">필수여부</label>
+                           <div class="search-area check-area">
+                              <div class="form-check medium">
+                                 <input type="radio" name="radio" id="radio1">
+                                 <label for="radio1">전체</label>
+                              </div>                          
+                              <div class="form-check medium">
+                                 <input type="radio" name="radio" id="radio2">
+                                 <label for="radio2">신청</label>
+                              </div>                          
+                              <div class="form-check medium">
+                                 <input type="radio" name="radio" id="radio3">
+                                 <label for="radio3">접수</label>
+                              </div>                                                     
+                           </div>
+                        </li>                         
+                     </ul>
+                     <div class="btn-area btn-end">
+                        <div class="align">
+                           <button type="button" class="btn tertiary medium">초기화</button>
+                           <button type="submit" class="btn secondary medium">조회</button>                        
+                        </div>
+                     </div>
+                  </form>
+               </div>         
+               
+               <div class="mb-50"></div>
+
+               <div class="wrap-form-area">
+                  <div class="inp-form">
+                     <ul>                                                         
+                        <li class="col1 txt-list">
+                           <strong class="tit">
+                              <strong>게시번호</strong>
+                           </strong>   
+                           <div class="inp-box">
+                              <div class="dynatree-container">
+                                 <a href="#">트리영역 a 밑줄삭제</a>
+                              </div>
+                           </div>                                                                     
+                        </li>   
+                     </ul>                  
+                  </div>
+               </div>           
+
+               <div class="board-top tbl-top">
+                  <div class="left-box">
+                     <strong class="tit top-txt">전체<strong>240</strong>개</strong>
+                     <div class="top-txt">
+                        <select class="form-select-sort large" title="정보 구분 선택">                           
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                           <option value="">10개씩 보기</option>               
+                        </select>
+                     </div>                     
+                  </div>                  
+                  <div class="right-box">
+                     <button type="button" class="btn primary medium">신규</button>                     
+                  </div>
+               </div>
+              
+               <div class="wrap-check-tbl">
+                  <div class="table-wrap grid_list">
+                     <table class="tbl col check">
+                        <caption>공지사항 관리</caption>
+                        <colgroup>
+                           <col style="width:60px;">                                                                                 
+                           <col style="width:120px;">                                                                                 
+                           <col style="width:120px;">                                                                                 
+                           <col span="8" style="width:20%;">                                                                                                            
+                        </colgroup>
+                        <thead>
+                           <tr>                                                
+                              <th scope="col" data-selector><input type="checkbox" id="th_test2"></th>                                                                                                          
+                              <th scope="col">
+                                 오름차순 혹은 내림차
+                                 <a class="sort" href="#" data-sort="LAST_LGN_DTL_DTTM"><span>오름차순 혹은 내림차순 정렬 선택</span></a>
+                              </th>                                                            
+                              <th scope="col">
+                                 오름차순오름차순오름차순오름차순오름차순
+                                 <a class="sort up" href="#" data-sort="LAST_LGN_DTL_DTTM"><span>오름차순</span></a>
+                              </th>                                                            
+                              <th scope="col">
+                                 내림차순내림차순내림차순내림차순
+                                 <a class="sort down" href="#" data-sort="LAST_LGN_DTL_DTTM"><span>내림차순</span></a>
+                              </th>                                                                          
+                              <th scope="col">
+                                 <input type="radio" id="th_test1">
+                                 텍스트
+                              </th>                                                            
+                              <th scope="col">
+                                 <input type="checkbox" id="th_test2">
+                                 <label for="th_test2">label</label>
+                              </th>                                                            
+                              <th scope="col">
+                                 등록자
+                                 <a class="sort" href="#" data-sort="LAST_LGN_DTL_DTTM"><span>오름차순 혹은 내림차순 정렬 선택</span></a>
+                              </th>                                                            
+                              <th scope="col">
+                                 등록일자
+                                 <a class="sort up" href="#" data-sort="LAST_LGN_DTL_DTTM"><span>오름차순</span></a>
+                              </th>                                                            
+                              <th scope="col">
+                                 조회수
+                                 <a class="sort down" href="#" data-sort="LAST_LGN_DTL_DTTM"><span>내림차순</span></a>
+                              </th>                                                            
+                              <th scope="col">활성화</th>                                                            
+                              <th scope="col">첨부파일</th>                                                                                          
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr class="current">
+                              <td data-selector='row'>
+                                 <input type="checkbox">
+                              </td>                              
+                              <td data-selector='row'>
+                                 <input type="radio">
+                              </td>                   
+                              <td class="text-left ellipsis">testtesttesttesttesttesttesttesttesttesttesttesttesttesttest</td>                              
+                              <td>
+                                 <input type="radio" id="test1">
+                                 <label for="test1">labellabellabellabellabellabellabel</label>
+                              </td>                        
+                              <td>
+                                 <input type="checkbox" id="test2">
+                                 텍스트
+                              </td>                        
+                              <td>필수</td>                        
+                              <td>관리자</td>                        
+                              <td>2025-05-06</td>                        
+                              <td class="text-left">좌측정렬</td>                        
+                              <td>비활성</td>                        
+                              <td>있음</td>                                                      
+                           </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </tbody>
+                           <tr>
+                              <td data-selector='row'>
+                                 <input type="checkbox">
+                              </td>                              
+                              <td data-selector='row'>
+                                 <input type="radio">
+                              </td>                        
+                              <td class="text-left ellipsis"><a href="#none">클릭되는 텍스트클릭되는 텍스트클릭되는 텍스트클릭되는 텍스트클릭되는 텍스트클릭되는 텍스트</a></td>                              
+                              <td>
+                                 <input type="radio" id="test1">
+                                 <label for="test1">label</label>
+                              </td>                        
+                              <td>
+                                 <input type="checkbox" id="test2">
+                                 <label for="test2">label</label>
+                              </td>                        
+                              <td>필수</td>                        
+                              <td>관리자</td>                        
+                              <td>2025-05-06</td>                        
+                              <td>9,999</td>                        
+                              <td>비활성</td>                        
+                              <td>있음</td>                                                      
+                           </tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </tbody>
+                     </table>
+                  </div>                  
+               </div>
+               <div class="paging">
+                  <ul>
+                     <li class="morePrev on"><a href="#1"><span>첫페이지</span></a></li>
+                     <li class="prev"><a href="#10"><span>이전</span></a></li>
+                  </ul>
+                  <ul class="pages">
+                     <li class="selected"><strong>1</strong></li>   
+                     <li><a href="#2">2</a></li>
+                     <li><a href="#3">3</a></li>
+                     <li><a href="#4">4</a></li>
+                     <li><a href="#5">5</a></li>
+                     <li><a href="#6">6</a></li>
+                     <li><a href="#7">7</a></li>
+                     <li><a href="#8">8</a></li>
+                     <li><a href="#9">9</a></li>
+                     <li><a href="#10">10</a></li>
+                  </ul>
+                  <ul>
+                     <li class="next"><a href="#11"><span>다음</span></a></li>
+                     <li class="moreNext"><a href="#11"><span>마지막페이지</span></a></li>
+                  </ul>
+               </div>
             </div>
             <!--// 내용 -->
          </div>
