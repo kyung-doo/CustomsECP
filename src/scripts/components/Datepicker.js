@@ -16,6 +16,7 @@ class Datepicker {
         this.props = props;
         this.input = this.ele.find('input');
         this.btn = this.ele.find('.calendar-btn');
+        this.btn.attr('type', 'button');
         this.today = new Date();
         this.selectDate = null;
         this.minDate = null;
@@ -82,19 +83,31 @@ class Datepicker {
             }
         });    
 
-        this.btn.on('click', (e) => {
-            
+        $("#wrap").append('<div class="calendar-blind d-none"></div>');
+
+        this.btn.on('click', (e) => {            
             if(!this.isShow) {                
                 this.isShow = true;                
                 this.showCalendar();                                
                 
             }   
             this.btn.closest('.calendar-form').addClass('on');                             
-        });          
+            
+            $('.calendar-blind').show();
+        });    
+        
+        $(".calendar-blind").on('click', function () {
+            $('.datepicker').hide();
+            $('.calendar-form').removeClass('on')
+            $('.calendar-form input').removeAttr('disabled')
+            $('.calendar-blind').hide();
+        });
+
+       
     }
 
     showCalendar () {
-
+        
         $('*[data-ui="datepicker"]').each(function () {
             $(this).datepicker('hideCalendar');
         });
@@ -147,30 +160,18 @@ class Datepicker {
         $(window).on('resize.datepicker', () => {
             this.calendar.css({left: this.ele.offset().left, top: this.ele.offset().top + 50});
         });
-        $("html, body").trigger('scroll.datepicker');                
-
-        const exceptions = ['.calendar-form','.calendar-wrap','button'];
-
-        $(document).on('click', function(e) {
-            let isInsideException = exceptions.some(selector =>
-                $(e.target).closest(selector).length > 0
-            );
-
-            if (!isInsideException) {
-                $('.datepicker').hide();
-                $('.calendar-form').removeClass('on')
-                $('.calendar-form input').removeAttr('disabled')
-            }           
-        });                
+        $("html, body").trigger('scroll.datepicker');                        
 
         this.calendar.find(".btn-cancel").on('click', () => {
             this.hideCalendar();
+            $('.calendar-blind').hide();
         });
         this.calendar.find(".btn-enter").on('click', () => {
             if(this.selectDate) {
                 this.input.val(dayjs(this.selectDate).format('YYYY-MM-DD'));
             }
             this.hideCalendar();
+            $('.calendar-blind').hide();
         });
         this.calendar.find(".btn-prev").css({'pointer-events': ''}).on('click', () => {
             this.prevCalendar();
@@ -178,6 +179,20 @@ class Datepicker {
         this.calendar.find(".btn-next").css({'pointer-events': ''}).on('click', () => {
             this.nextCalendar();
         });
+
+        // const exceptions = ['.calendar-form','.calendar-wrap','button'];
+
+        // $(document).on('click', function(e) {
+        //     let isInsideException = exceptions.some(selector =>
+        //         $(e.target).closest(selector).length > 0
+        //     );
+
+        //     if (!isInsideException) {
+        //         $('.datepicker').hide();
+        //         $('.calendar-form').removeClass('on')
+        //         $('.calendar-form input').removeAttr('disabled')
+        //     }           
+        // });     
 
         this.calendar.find(".day-con button").attr('disabled', '');
 
@@ -237,6 +252,25 @@ class Datepicker {
             this.currentYear = new Date().getFullYear();
             this.currentMonth = new Date().getMonth() + 1;
         }
+
+        //달력 짤렸을떄
+        const $calendar = $('.calendar-wrap');
+
+        if (!$calendar.is(':visible')) return;
+
+        const calendarOffset = $calendar.offset();
+        const calendarHeight = $calendar.outerHeight();
+        const calendarBottom = calendarOffset.top + calendarHeight;
+        const windowBottom = $('.content-wrap').scrollTop() + $('.content-wrap').height() - 80;        
+
+        if (calendarBottom > windowBottom) {                
+            //달력짤림
+            $('body').addClass('on');            
+        }else{
+            //달력안짤림
+            $('body').removeClass('on');            
+        }  
+
         
         this.renderCalendar();
     }
@@ -464,6 +498,7 @@ $.fn.datepicker = function (option, params) {
 $.fn.datepicker.Constructor = Datepicker;
 
 
- $(document).ready(function () {
-              
+ $(document).ready(function () {       
+
+      
 });
