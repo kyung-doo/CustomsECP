@@ -1,5 +1,5 @@
 .wrap-form-area{border-top:1px solid #58616A;
-  .inp-form {position:relative;  
+  .inp-form {position:relative;height:100%;  
     /** 버튼이있을때 **/
     &:has(.form-btn-area){padding: 32px 130px 32px 32px;}   
 
@@ -9,7 +9,7 @@
     /** stop,버튼이 같이 있을떄 **/
     &:has(.step-area.type1):has(.form-btn-area){padding: 32px 130px 32px 239px;}
     
-    > ul {display:flex;flex-direction:row;flex-wrap:wrap;
+    > ul {display:flex;flex-direction:row;flex-wrap:wrap;height:100%;
       .tit {font-size:15px;position:relative;display:inline-flex;align-items:center;gap:4px;padding-right:12px;word-break: break-all;font-weight: 700;
         .title > strong{font-size:15px}
         + .form-group {display:flex;align-items:center;gap:8px;margin-top:9px;}
@@ -30,7 +30,7 @@
         strong{font-size: 14px;position: relative;}
       }
       .title {display: flex;position: relative;}
-      .inp-box {display: block;flex:1;margin-top: 0;height:100%;border-bottom:1px solid #E4E4E4;padding:10px 16px;
+      .inp-box {display: flex;flex: 1;margin-top: 0;height: 100%;width: calc(100% - 160px);border-bottom: 1px solid #E4E4E4;padding: 10px 16px;align-items: flex-start;flex-direction: column;justify-content: center;
         .inp-list li{display: flex;align-items: center;gap: 20px;
           &:first-child{margin-top: 0;}
         }
@@ -40,7 +40,13 @@
           .txtarea{margin-bottom: 30px;
             &:last-child{margin-bottom: 0;}
           }
-        }        
+          &.cont-txt{width: 100%;justify-content: flex-start;min-height: 300px;}
+        }       
+        .area-group{display: flex;align-items: center;gap: 8px;width: 100%;min-width: 100px;}
+        .check-list-box{display: flex;gap:24px;flex-wrap: wrap;width:100%;align-items: center;height: 100%;}         
+        .img-box{position: relative;width:100%;background-color: #eee;padding: 10px;
+          img{width: 100%;height: 100%;object-fit: contain;}
+        }
       }
     }    
 
@@ -50,16 +56,11 @@
     /** 파일첨부 **/
     .file-upload{width:100%;display: flex;gap:8px;margin-top: 16px;
       &:first-child{margin-top: 0;}
-      .txt-box{border:1px solid #c6c6c6;background-color:#fff;border-radius:4px;width:100%;height:35px;display:flex;align-items:center;min-width:1112px;width:1112px;                            
+      .txt-box{border:1px solid #c6c6c6;background-color:#fff;border-radius:4px;width:calc(100% - 160px);height:35px;display:flex;align-items:center;
         .txt{display:block;padding:0 16px;width:100%;height:auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-decoration:none}
       }
       .file-upload-btn-wrap{display: flex;align-items: center;gap: 16px;}
     }
-    
-    .inp-box {margin-top: 12px;display: flex;align-items: center;gap: 8px;width:100%;      
-      .area-group{display: flex;align-items: center;gap: 8px;width: 100%;min-width: 100px;}
-      .check-list-box{display: flex;gap:24px;flex-wrap: wrap;width:100%;align-items: center;height: 100%;}
-    }  
 
     .form-group, .wrap-form-group {width: 100%;}
     .form-btn-area {position: absolute;top: 32px;right: 32px;display: flex;gap: 20px;
