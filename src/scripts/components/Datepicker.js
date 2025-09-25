@@ -261,7 +261,7 @@ class Datepicker {
         const calendarOffset = $calendar.offset();
         const calendarHeight = $calendar.outerHeight();
         const calendarBottom = calendarOffset.top + calendarHeight;
-        const windowBottom = $('.content-wrap').scrollTop() + $('.content-wrap').height() - 80;        
+        const windowBottom = $('.content-wrap').scrollTop() + $('.content-wrap').height() - 100;     
 
         if (calendarBottom > windowBottom) {                
             //달력짤림
