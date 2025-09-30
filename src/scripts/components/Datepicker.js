@@ -265,10 +265,10 @@ class Datepicker {
 
         if (calendarBottom > windowBottom) {                
             //달력짤림
-            $('body').addClass('on');            
+            $('.cont-body').addClass('on');            
         }else{
             //달력안짤림
-            $('body').removeClass('on');            
+            $('.cont-body').removeClass('on');            
         }  
 
         
@@ -481,6 +481,8 @@ class Datepicker {
         this.btn.focus();
         this.isShow = false;
         this.selectDate = null;
+
+        $('.cont-body').removeClass('on');
 
         
     }
