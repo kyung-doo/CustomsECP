@@ -4,7 +4,7 @@
 .footer-quick-pop{box-shadow: 4px 4px 24px 0 rgba(0, 0, 0, 0.16);padding: 24px 32px 32px 32px;
   strong.title{padding: 10px 0 32px 0;display: block;}
   a.title{border-radius: 4px;background-color: #F4F5F6;display: block;padding: 16px;color:#1D1D1D;font-weight: 700;}
-  a.txt{font-size: 15px;position: relative;padding: 12px 4px 12px 20px;display: block;
+  a.txt{position: relative;padding: 12px 4px 12px 20px;display: block;
     &::before{content:"";display: block;position: absolute;top:17px;left:8px;width:4px;height:4px;background-color: #2D2D2D;border-radius: 50%;}
   }
   a:hover{text-decoration: underline;}
@@ -60,6 +60,6 @@
         }
       }
     }
-    .f-copy {font-size: 15px;color: #555;}
+    .f-copy {color: #555;}
   }
 }

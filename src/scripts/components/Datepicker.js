@@ -123,13 +123,13 @@ class Datepicker {
                     </div>
                     <div class="calendar-content">
                         <div class="week-con">
-                            <div>Su</div>
-                            <div>Mo</div>
-                            <div>Tu</div>
-                            <div>We</div>
-                            <div>Th</div>
-                            <div>Fr</div>
-                            <div>Sa</div>
+                            <div>일</div>
+                            <div>월</div>
+                            <div>화</div>
+                            <div>수</div>
+                            <div>목</div>
+                            <div>금</div>
+                            <div>토</div>
                         </div>
                         <div class="day-con"></div>
                         <div class="year-con d-none"></div>
@@ -253,24 +253,20 @@ class Datepicker {
             this.currentMonth = new Date().getMonth() + 1;
         }
 
-        //달력 짤렸을떄
-        const $calendar = $('.calendar-wrap');
+        
 
-        if (!$calendar.is(':visible')) return;
-
-        const calendarOffset = $calendar.offset();
-        const calendarHeight = $calendar.outerHeight();
-        const calendarBottom = calendarOffset.top + calendarHeight;
-        const windowBottom = $('.content-wrap').scrollTop() + $('.content-wrap').height() - 100;     
-
-        if (calendarBottom > windowBottom) {                
-            //달력짤림
-            $('.cont-body').addClass('on');            
-        }else{
-            //달력안짤림
-            $('.cont-body').removeClass('on');            
-        }  
-
+        //달력이 짤릴경우
+        setTimeout(function() {
+            var $calendar = $('.datepicker');
+            var calendarOffset = $calendar.offset().top;
+            var calendarHeight = $calendar.outerHeight();
+            var windowHeight = $(window).height();
+            var scrollTop = $(window).scrollTop();                    
+            
+            if (calendarOffset.top + calendarHeight > windowHeight + scrollTop) {            
+                $('.cont-body').addClass('on');                            
+            }
+        }, 10);
         
         this.renderCalendar();
     }

@@ -53,8 +53,8 @@
     p{color:#717171}
   }  
 
-  th {font-size: 14px;border-bottom: 1px solid #58616A;vertical-align: middle;background-color: #E6E8EA;position: relative;text-align: center;padding: 5px;font-weight: 700;height: 35px;line-height: 150%;
-    *:not(.tooltip-tit *) {font-weight: 700;font-size: 15px;}
+  th {font-size: 17px;border-bottom: 1px solid #58616A;vertical-align: middle;background-color: #E6E8EA;position: relative;text-align: center;padding: 5px;font-weight: 700;height: 35px;line-height: 150%;
+    *:not(.tooltip-tit *) {font-weight: 700;}
     .tooltip-tit{display: flex;justify-content: center;      
       .title{padding-right: 20px;position: relative;}
       .contextual-help{bottom:2px;transform: translateY(0);margin: 0 0;margin-left: 3px;height:auto;
@@ -62,7 +62,7 @@
         .tooltip-popover{text-align: left;}
       }      
     }
-    .title > span {font-size: 15px;font-weight: 700;}
+    .title > span {font-weight: 700;}
     .resize-point {position: absolute;right: -5px;top: 0;width: 10px;height: 100%;cursor: col-resize;pointer-events: all;
         &::after {content: "";position: absolute;width: 1px;height: 40%;background-color: #b7b7b7;z-index: 1;top: 50%;transform: translateY(-50%);}
     }  
@@ -161,7 +161,7 @@
 
   // th
   .header{display: flex;background-color: #E6E8EA;border-bottom:1px solid #58616A;
-    li{padding: 14px 16px;font-size: 15px;text-align: center;line-height: 150%;font-weight: 700;}
+    li{padding: 14px 16px;text-align: center;line-height: 150%;font-weight: 700;}
   }
 
   // td
@@ -175,7 +175,7 @@
         }
         .txt:not(.accordion-btn){height:100%;display: flex;align-items: center;justify-content: center;}
         a.txt{padding-right: 50px;text-align: left;}
-        &.number .txt{color:#003675;letter-spacing: 4px;font-size: 15px;}                
+        &.number .txt{color:#003675;letter-spacing: 4px;}                
       }
     } 
 
@@ -186,7 +186,7 @@
         &.nofile {margin-bottom: 0;}
         &.nofile::before {display: none;}
       }
-      .number{position: absolute;top:42px;left:29px;font-size: 15px;color:#246BEB;letter-spacing: 4px;}
+      .number{position: absolute;top:42px;left:29px;color:#246BEB;letter-spacing: 4px;}
       .title{font-size: 19px;line-height: 150%;}
       .txt{line-height: 150%;margin-top: 21px;}
       .title-type3{margin-top: 0;font-size:15px;line-height: 1;}

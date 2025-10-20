@@ -5,13 +5,13 @@ button {border: 0;}
 .gnb-toggle-wrap {display: none;}
 #skip-link {  position: absolute;top: 0;right: 0;left: 0;margin: 0 auto;z-index: 99999;       
   a {position: absolute;top: -50px;width: 100%;font-size: 0;    
-    &:active, &:focus {display: flex;align-items: center;justify-content: center;top: 0;height: 34px;padding: 6px 0;text-align: center;color: #fff;font-size: 14px;background: #272d34;}
+    &:active, &:focus {display: flex;align-items: center;justify-content: center;top: 0;height: 34px;padding: 6px 0;text-align: center;color: #fff;font-size: 17px;background: #272d34;}
   }
 }
 
 #masthead {position: relative;background-color: #4f6280;z-index: 8;padding: 0 16px;
   .toggle-wrap {width: 1280px;height: 32px;display: flex;align-items: center;margin: 0 auto;}
-  .nuri-txt {font-size: 15px;color: #FFF;position: relative;padding-left: 29px;background-image: url("../assets/icons/medium.svg");background-repeat: no-repeat;background-size:contain;}
+  .nuri-txt {color: #FFF;position: relative;padding-left: 29px;background-image: url("../assets/icons/medium.svg");background-repeat: no-repeat;background-size:contain;}
 }
 
 #header {position: absolute;top: 0;z-index: 9;width: 100%;background-color: #fff;transition: transform 0.6s $easeOutExpo;  
@@ -26,7 +26,7 @@ button {border: 0;}
     &.mobile-top-area{display: none;}
     .name-box {display: flex;gap: 36px;margin-right: 15px;margin-left: 12px;line-height: 1;height: 100%;align-items: center;
       .name {line-height: 20px;}
-      .inform, .time {height: 20px;display: flex;align-items: center;padding: 0 7px;border-radius: 30px;font-size: 15px;position: relative;line-height: 150%;}
+      .inform, .time {height: 20px;display: flex;align-items: center;padding: 0 7px;border-radius: 30px;position: relative;line-height: 150%;}
       .inform:before, .time:before {content: "";display: block;
         position: absolute;top: 0;left: -24px;width: 20px;height: 20px;background-repeat: no-repeat;background-position: center;}
       .inform {background-color: #246beb;color: #fff;}

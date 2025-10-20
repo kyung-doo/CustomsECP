@@ -10,7 +10,7 @@
   .gnb-main-trigger {background-color: rgba(0, 0, 0, 0);font-size: 18px;padding: 0 8px;position: relative;color: #555;line-height: 1.5;height: 100%;font-weight: 700;          
     // &:before {content: "";display: block;position: absolute;bottom: 0px;left: 50%;width: 0;height: 4px;background-color: #16408d;transition: all 0.6s $easeOutExpo;}
     // &:hover::before{width:100%;left: 0;}
-    span {display: flex;font-size: 13px;color: #555;margin-top: -1px;}
+    span {display: flex;color: #555;margin-top: -1px;}
   }
   .allmenu {background-color: rgba(0, 0, 0, 0);font-size: 0;background-image: url("../assets/icons/menu.svg");min-width: 36px;background-repeat: no-repeat;background-position: center;}
   .gnb-toggle-wrap {display: none;position: absolute;top: 55px;left: 0;width: 215px;z-index: 100;background: #1E2124;padding: 20px 16px;}
@@ -23,8 +23,8 @@
   .gnb-main-list {
     .gnb-title {
       .left-title {font-size: 25px;color: #060606;display: inline-block;}
-      span {display: block;font-size: 15px;margin-top: 18px;color: #060606;line-height: 1.5;}
-      p {margin-top: 29px;font-size: 15px;color: #555;line-height: 1.5;position: relative;padding: 0 68px 0 23px;
+      span {display: block;margin-top: 18px;color: #060606;line-height: 1.5;}
+      p {margin-top: 29px;color: #555;line-height: 1.5;position: relative;padding: 0 68px 0 23px;
         &:before {content: "";display: block;position: absolute;top: 4px;left: 0;width: 16px;height: 16px;background-image: url("../assets/icons/live-area.svg");}
       }
     }
@@ -36,7 +36,7 @@
         &.right-menu {margin-left: calc(33.333% - -24px);}
       }
       .sub-title {display: block;font-size: 20px;line-height: 150%;color:#fff;padding-left: 8px;margin-bottom: 14px;
-        span {display: block;font-size: 13px;color: #555;margin-top: 0;line-height: 150%;}
+        span {display: block;color: #555;margin-top: 0;line-height: 150%;}
       }
       a.sub-title{display: none;}
       .depth2 {margin-top: 10px;
@@ -52,7 +52,7 @@
             &:before {content: "";display: block;position: absolute;top: 12px;left: -4px;width: 4px;height: 4px;border-radius: 50%;background-color: #B1B8BE;transform: translateY(-50%);}            
           }
         }
-        span {font-size: 13px;color: #555;display: block;font-style: normal;line-height: 150%;}
+        span {color: #555;display: block;font-style: normal;line-height: 150%;}
       }
     }
   }

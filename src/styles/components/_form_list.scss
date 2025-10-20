@@ -27,7 +27,7 @@
     /** 텍스트 리스트 **/
     .txt-list {display: flex;align-items: flex-start;
       .tit{width:160px;min-width:160px;line-height:150%;background-color: #E6E8EA;padding: 10px 16px;height:100%;border-bottom:1px solid #CDD1D5;
-        strong{font-size: 14px;position: relative;}
+        strong{font-size: 17px;position: relative;}
       }
       .title {display: flex;position: relative;}
       .inp-box {display: flex;flex: 1;margin-top: 0;height: 100%;width: calc(100% - 160px);border-bottom: 1px solid #E4E4E4;padding: 10px 16px;align-items: flex-start;flex-direction: column;justify-content: center;
