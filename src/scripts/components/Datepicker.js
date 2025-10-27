@@ -81,9 +81,7 @@ class Datepicker {
                     }
                 }
             }
-        });    
-
-        $("#wrap").append('<div class="calendar-blind d-none"></div>');
+        });            
 
         this.btn.on('click', (e) => {            
             if(!this.isShow) {                
@@ -92,21 +90,19 @@ class Datepicker {
                 
             }   
             this.btn.closest('.calendar-form').addClass('on');                             
-            
-            $('.calendar-blind').show();
         });    
-        
+    }
+
+    showCalendar () {
+
+        $("#wrap").append('<div class="calendar-blind"></div>');
+
         $(".calendar-blind").on('click', function () {
             $('.datepicker').hide();
             $('.calendar-form').removeClass('on')
             $('.calendar-form input').removeAttr('disabled')
-            $('.calendar-blind').hide();
+            $('.calendar-blind').remove();
         });
-
-       
-    }
-
-    showCalendar () {
         
         $('*[data-ui="datepicker"]').each(function () {
             $(this).datepicker('hideCalendar');
@@ -164,14 +160,14 @@ class Datepicker {
 
         this.calendar.find(".btn-cancel").on('click', () => {
             this.hideCalendar();
-            $('.calendar-blind').hide();
+            $('.calendar-blind').remove();
         });
         this.calendar.find(".btn-enter").on('click', () => {
             if(this.selectDate) {
                 this.input.val(dayjs(this.selectDate).format('YYYY-MM-DD'));
             }
             this.hideCalendar();
-            $('.calendar-blind').hide();
+            $('.calendar-blind').remove();
         });
         this.calendar.find(".btn-prev").css({'pointer-events': ''}).on('click', () => {
             this.prevCalendar();
