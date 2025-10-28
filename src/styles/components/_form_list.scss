@@ -40,7 +40,11 @@
           .txtarea{margin-bottom: 30px;
             &:last-child{margin-bottom: 0;}
           }
-          &.cont-txt{width: 100%;justify-content: flex-start;min-height: 300px;}
+          &.cont-txt{width: 100%;justify-content: flex-start;min-height: 300px;
+            ul{list-style: disc;}
+            ol{list-style: auto;}
+            ul,ol{list-style-position: inside;}
+          }
         }       
         .area-group{display: flex;align-items: center;gap: 8px;width: 100%;min-width: 100px;}
         .check-list-box{display: flex;gap:24px;flex-wrap: wrap;width:100%;align-items: center;height: 100%;}         
@@ -129,7 +133,7 @@
       }
     }
 
-    .hy{min-width: 15px;display: flex;justify-content: center;}
+    .hy{min-width: 15px;display: flex;justify-content: center;}    
   }
 
  /** 리스트 합계 **/

@@ -259,7 +259,7 @@ class Datepicker {
             var windowHeight = $(window).height();
             var scrollTop = $(window).scrollTop();                    
             
-            if (calendarOffset.top + calendarHeight > windowHeight + scrollTop) {            
+            if (calendarOffset + calendarHeight > windowHeight + scrollTop) {            
                 $('.cont-body').addClass('on');                            
             }
         }, 10);
