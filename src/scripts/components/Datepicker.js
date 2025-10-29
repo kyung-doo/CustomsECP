@@ -54,14 +54,14 @@ class Datepicker {
                 return;
             }
 
-            if(isNaN(Date.parse(val))) {
+            if(!this.isValidDate(val)) {
                 alert('올바른 날짜 형식을 입력하세요. (YYYY-MM-DD)');
-                this.input.val('').focus(); 
+                this.input.val('').focus();                
             } else {
                 this.selectDate = new Date(this.input.val());
                 if(dayjs(this.props.maxDate).format('YYYYMMDD') === dayjs(this.today).format('YYYYMMDD') && new Date(val) > this.props.maxDate) {
                     alert('오늘 날짜보다 큰 날짜를 입력 할 수없습니다.');
-                    this.input.val('').focus(); 
+                    this.input.val('').focus();                     
                     return;
                 }
 
@@ -69,7 +69,7 @@ class Datepicker {
                     this.minDate = new Date($(this.props.minInput).val());
                     if(this.selectDate < this.minDate) {
                         alert('시작날짜는 종료날짜보다 클 수 없습니다.');
-                        this.input.val('').focus(); 
+                        this.input.val('').focus();                         
                     }
                 }
 
@@ -77,7 +77,7 @@ class Datepicker {
                     this.maxDate = new Date($(this.props.maxInput).val());
                     if(this.selectDate > this.maxDate) {
                         alert('종료날짜는 시작날짜보다 작을 수 없습니다.');
-                        this.input.val('').focus(); 
+                        this.input.val('').focus();                         
                     }
                 }
             }
@@ -91,6 +91,17 @@ class Datepicker {
             }   
             this.btn.closest('.calendar-form').addClass('on');                             
         });    
+    }
+
+    isLeapYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+    }
+
+    isValidDate( dateStr ) {
+        if(isNaN(Date.parse(dateStr))) return false;
+        const [year, month, day] = dateStr.split('-').map(Number);
+        const maxDays = [31, this.isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        return day <= maxDays[month - 1];
     }
 
     showCalendar () {
