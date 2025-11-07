@@ -90,3 +90,12 @@ html *, body * {font-family: 'Pretendard GOV';box-sizing: border-box;}
 .lin-h1{line-height: 150% !important;}
 
 .w100per{width:100% !important}
+
+/** iframe **/
+.iframe-mngr-txt ul{list-style: disc;}
+.iframe-mngr-txt ol{list-style: auto;}
+.iframe-mngr-txt ul,
+.iframe-mngr-txt ol{list-style-position: inside;}
+
+            
+            
