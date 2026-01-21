@@ -38,7 +38,7 @@ $(() => {
 
     //메뉴 js
     $(function () {
-    $('.depth2 > li > a').on('click', function (e) {
+    $('.depth2 > li > a.child-menu').on('click', function (e) {
         e.preventDefault();
 
         var $depth3 = $(this).next('.depth3');
