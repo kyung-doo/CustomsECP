@@ -65,7 +65,7 @@ class Table {
         this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
         try {
             await this.loadData();
-            this.scrollTop();
+            //this.scrollTop();
             this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
             this.setHead();
             this.setBody();
@@ -124,7 +124,7 @@ class Table {
                 this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                 try {
                     await this.loadData();
-                    this.scrollTop();
+                    //this.scrollTop();
                     this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                     this.setHead();
                     this.setBody();
@@ -149,7 +149,7 @@ class Table {
                 this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                 try {
                     await this.loadData();
-                    this.scrollTop();
+                    //this.scrollTop();
                     this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
                     this.setHead();
                     this.setBody();
@@ -579,11 +579,11 @@ class Table {
         $(element).remove();
     }
 
-    scrollTop () {
-        if(this.props.scrollTop) {
-            $('html, body').scrollTop(this.ele.position().top + $("#header").height());
-        }
-    }   
+    // scrollTop () {
+    //     if(this.props.scrollTop) {
+    //         $('html, body').scrollTop(this.ele.position().top + $("#header").height());
+    //     }
+    // }   
 
 
     getCheckData ( callback ) {
@@ -605,7 +605,7 @@ class Table {
         this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
         try {
             await this.loadData();
-            this.scrollTop();
+            //this.scrollTop();
             this.ele.find('.pagination').pagination('setPage', [this.page, this.data.totalPages]);
             this.setHead();
             this.setBody();
